@@ -16,6 +16,12 @@ Useful links:
 
 - <https://popecol.github.io/mrangr/>
 
+- <https://github.com/popecol/mrangr>
+
+- <https://cran.r-project.org/web/packages/mrangr/index.html>
+
+- Report bugs at <https://github.com/popecol/mrangr/issues>
+
 ## Author
 
 **Maintainer**: Katarzyna Markowska <katarzyna.markowska@amu.edu.pl>
