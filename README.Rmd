@@ -22,7 +22,7 @@ load("inst/extdata/readme/first_sim.rda")
 <!-- badges: start -->
 
 [![CRAN release](https://www.r-pkg.org/badges/version/mrangr?color=green)](https://cran.r-project.org/package=mrangr) [![Project Status: Active -- The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-
+[![R-CMD-check](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The **mrangr** package is designed to simulate metacommunities within a **spatially explicit, mechanistic framework**. It extends the functionality of the [`rangr`](https://github.com/ropensci/rangr) package by allowing for the simulation of **multiple interacting species** via an asymmetric interaction matrix.

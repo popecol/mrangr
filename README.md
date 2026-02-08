@@ -8,7 +8,7 @@ release](https://www.r-pkg.org/badges/version/mrangr?color=green)](https://cran.
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-
+[![R-CMD-check](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The **mrangr** package is designed to simulate metacommunities within a
