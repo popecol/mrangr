@@ -12,6 +12,9 @@ Flexible, mechanistic, and spatially explicit simulator of metacommunities. It e
 Useful links:
 \itemize{
   \item \url{https://popecol.github.io/mrangr/}
+  \item \url{https://github.com/popecol/mrangr}
+  \item \url{https://cran.r-project.org/web/packages/mrangr/index.html}
+  \item Report bugs at \url{https://github.com/popecol/mrangr/issues}
 }
 
 }

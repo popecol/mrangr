@@ -44,4 +44,6 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-URL: https://popecol.github.io/mrangr/
+URL: https://popecol.github.io/mrangr/, https://github.com/popecol/mrangr, 
+    https://cran.r-project.org/web/packages/mrangr/index.html
+BugReports: https://github.com/popecol/mrangr/issues
