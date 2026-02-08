@@ -1,0 +1,12 @@
+citHeader("To cite mrangr in publications use:")
+
+bibentry(
+  key = "mrangr",
+  bibtype = "manual",
+  title = "mrangr: Mechanistic Metacommunity Simulator",
+  author = c(
+    person("Katarzyna", "Markowska"),
+    person("Lechosław", "Kuczyński")),
+  year = "2025",
+  note = "R package version 1.0.1"
+)

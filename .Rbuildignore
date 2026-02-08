@@ -1,0 +1,10 @@
+^mrangr\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^dev_scripts$
+^\.github$
+^dev$
+^cran-comments\.md$
+codemeta.json
+README.Rmd
+^CRAN-SUBMISSION$
