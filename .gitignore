@@ -53,4 +53,3 @@ dev_scripts/ideas.R
 dev_scripts/kernels.R
 tests/testthat/Rplots.pdf
 inst/doc
-docs
