@@ -13,9 +13,7 @@ Description: Flexible, mechanistic, and spatially explicit simulator of
     species interacting through an asymmetric matrix of pairwise
     relationships, allowing users to model all types of biotic
     interactions — competitive, facilitative, or neutral — within
-    spatially explicit virtual environments. This work was supported by 
-    the National Science Centre, Poland, grant no. 2018/29/B/NZ8/00066 and 
-    the Poznań Supercomputing and Networking Centre (grant no. pl0090-01).
+    spatially explicit virtual environments.
 License: MIT + file LICENSE
 Depends: 
     R (>= 3.5.0)
@@ -46,3 +44,4 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
+URL: https://popecol.github.io/mrangr/

@@ -20,3 +20,6 @@ community <- get_community()
 summary(community)
 
 }
+\seealso{
+\link{community_eg}
+}

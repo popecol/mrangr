@@ -1,0 +1,44 @@
+url: https://popecol.github.io/mrangr/
+template:
+  bootstrap: 5
+
+reference:
+  - title: Simulation preparation
+  - contents:
+    - grf
+    - K_sim
+    - initialise_inv
+    - initialise_com
+    - update.sim_com_data
+    - summary.sim_com_data
+
+  - title: Simulation
+  - contents:
+    - sim_com
+    - summary.sim_com_results
+
+  - title: Results
+  - contents:
+    - virtual_ecologist
+    - to_rast.sim_com_results
+    - plot.sim_com_results
+    - plot_series
+
+  - title: Data
+  - contents:
+    - K_map_eg.tif
+    - n1_map_eg.tif
+    - a_eg
+    - get_community
+    - community_eg
+    - get_simulated_com
+    - simulated_com_eg
+
+  - title: Helper functions
+  - contents:
+    - diagonal
+    - set_zero
+
+  - title: internal
+    contents:
+    - matches("print")

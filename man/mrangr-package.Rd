@@ -6,7 +6,14 @@
 \alias{mrangr-package}
 \title{mrangr: Mechanistic Metacommunity Simulator}
 \description{
-Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - 'rangr' (see \url{https://github.com/ropensci/rangr}), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments. This work was supported by the National Science Centre, Poland, grant no. 2018/29/B/NZ8/00066 and the Poznań Supercomputing and Networking Centre (grant no. pl0090-01).
+Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - 'rangr' (see \url{https://github.com/ropensci/rangr}), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://popecol.github.io/mrangr/}
+}
+
 }
 \author{
 \strong{Maintainer}: Katarzyna Markowska \email{katarzyna.markowska@amu.edu.pl} [copyright holder]

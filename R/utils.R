@@ -10,6 +10,8 @@
 #'
 #' @export
 #'
+#' @seealso [community_eg]
+#'
 #' @examples
 #' community <- get_community()
 #' summary(community)
@@ -28,6 +30,9 @@ get_community <- function() {
 #' a community over time.
 #'
 #' @export
+#'
+#' @seealso [simulated_com_eg]
+#'
 #'
 #' @examples
 #' sim <- get_simulated_com()

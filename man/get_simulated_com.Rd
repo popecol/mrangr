@@ -19,3 +19,6 @@ sim <- get_simulated_com()
 plot(sim)
 
 }
+\seealso{
+\link{simulated_com_eg}
+}

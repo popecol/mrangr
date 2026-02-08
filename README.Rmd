@@ -105,3 +105,7 @@ To cite **mrangr**, please use the `citation()` function:
 library(mrangr)
 citation("mrangr")
 ```
+
+## Funding
+
+This work was supported by the National Science Centre, Poland, grant no. 2018/29/B/NZ8/00066 and the Poznań Supercomputing and Networking Centre (grant no. pl0090-01).
