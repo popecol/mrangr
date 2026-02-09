@@ -84,7 +84,7 @@ initialise_com(
 - ...:
 
   Additional named arguments passed to
-  [`initialise()`](https://docs.ropensci.org/rangr/reference/initialise.html).
+  [`rangr::initialise()`](https://docs.ropensci.org/rangr/reference/initialise.html).
   Each must be either length 1 or equal to the number of species.
 
   kernel_args
@@ -100,7 +100,7 @@ A list of class `sim_com_data` containing:
 - spec_data:
 
   A list of `sim_data` objects (one per species) returned by
-  [`initialise()`](https://docs.ropensci.org/rangr/reference/initialise.html).
+  [`rangr::initialise()`](https://docs.ropensci.org/rangr/reference/initialise.html).
 
 - nspec:
 
@@ -193,6 +193,5 @@ community_03 <- initialise_com(
     list(mean = 0, sd = 1000),
     list(mean = 0, sd = 2000))
 )
-#> Error in get(as.character(FUN), mode = "function", envir = envir): object 'abs_rnorm' of mode 'function' was not found
 # }
 ```

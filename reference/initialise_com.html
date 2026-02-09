@@ -105,7 +105,7 @@ used as species names. If <code>FALSE</code>, species are numbered sequentially
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
-<dd><p>Additional named arguments passed to <code><a href="https://docs.ropensci.org/rangr/reference/initialise.html" class="external-link">initialise()</a></code>. Each must be either length 1 or equal to the number of species.</p><dl><dt>kernel_args</dt>
+<dd><p>Additional named arguments passed to <code><a href="https://docs.ropensci.org/rangr/reference/initialise.html" class="external-link">rangr::initialise()</a></code>. Each must be either length 1 or equal to the number of species.</p><dl><dt>kernel_args</dt>
 <dd><p>Optional. A list of lists, each containing named arguments for the corresponding
 species' kernel function. Must be the same length as number of species.</p></dd>
 
@@ -116,7 +116,7 @@ species' kernel function. Must be the same length as number of species.</p></dd>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A list of class <code>sim_com_data</code> containing:</p><dl><dt>spec_data</dt>
-<dd><p>A list of <code>sim_data</code> objects (one per species) returned by <code><a href="https://docs.ropensci.org/rangr/reference/initialise.html" class="external-link">initialise()</a></code>.</p></dd>
+<dd><p>A list of <code>sim_data</code> objects (one per species) returned by <code><a href="https://docs.ropensci.org/rangr/reference/initialise.html" class="external-link">rangr::initialise()</a></code>.</p></dd>
 
 <dt>nspec</dt>
 <dd><p>The number of species.</p></dd>
@@ -202,7 +202,6 @@ for every cell within the study area.</p></dd>
 <span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>mean <span class="op">=</span> <span class="fl">0</span>, sd <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>mean <span class="op">=</span> <span class="fl">0</span>, sd <span class="op">=</span> <span class="fl">2000</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in get(as.character(FUN), mode = "function", envir = envir):</span> object 'abs_rnorm' of mode 'function' was not found</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

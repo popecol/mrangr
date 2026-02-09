@@ -87,6 +87,5 @@ community_02 <- update(community_01,
    list(rate = 0.001),
    list(mean = 0, sd = 1000),
    list(mean = 0, sd = 2000)))
-#> Error in get(as.character(FUN), mode = "function", envir = envir): object 'abs_rnorm' of mode 'function' was not found
 # }
 ```

@@ -34,7 +34,7 @@
 
   Summary Of `sim_com_results` Object
 
-## Results
+## Post-processing
 
 - [`virtual_ecologist()`](https://popecol.github.io/mrangr/reference/virtual_ecologist.md)
   : Virtual Ecologist
