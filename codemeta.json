@@ -2,11 +2,9 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "mrangr",
-  "description": "Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - 'rangr' (see <https://github.com/ropensci/rangr>), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.",
+  "description": "Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - 'XXXX' (see <XXXX>), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.",
   "name": "mrangr: Mechanistic Metacommunity Simulator",
-  "relatedLink": ["https://popecol.github.io/mrangr/", "https://cran.r-project.org/web/packages/mrangr/index.html", "https://CRAN.R-project.org/package=mrangr"],
-  "codeRepository": "https://github.com/popecol/mrangr",
-  "issueTracker": "https://github.com/popecol/mrangr/issues",
+  "issueTracker": "XXXX",
   "license": "https://spdx.org/licenses/MIT",
   "version": "1.0.1",
   "programmingLanguage": {
@@ -24,37 +22,37 @@
   "author": [
     {
       "@type": "Person",
-      "givenName": "Katarzyna",
-      "familyName": "Markowska",
-      "email": "katarzyna.markowska@amu.edu.pl"
+      "givenName": "Author1_name",
+      "familyName": "Author1_surname",
+      "email": "XXXX"
     },
     {
       "@type": "Person",
-      "givenName": "Lechosław",
-      "familyName": "Kuczyński",
-      "email": "lechu@amu.edu.pl"
+      "givenName": "Author2_name",
+      "familyName": "Author2_surname",
+      "email": "XXXX"
     }
   ],
   "copyrightHolder": [
     {
       "@type": "Person",
-      "givenName": "Katarzyna",
-      "familyName": "Markowska",
-      "email": "katarzyna.markowska@amu.edu.pl"
+      "givenName": "Author1_name",
+      "familyName": "Author1_surname",
+      "email": "XXXX"
     },
     {
       "@type": "Person",
-      "givenName": "Lechosław",
-      "familyName": "Kuczyński",
-      "email": "lechu@amu.edu.pl"
+      "givenName": "Author2_name",
+      "familyName": "Author2_surname",
+      "email": "XXXX"
     }
   ],
   "maintainer": [
     {
       "@type": "Person",
-      "givenName": "Katarzyna",
-      "familyName": "Markowska",
-      "email": "katarzyna.markowska@amu.edu.pl"
+      "givenName": "Author1_name",
+      "familyName": "Author1_surname",
+      "email": "XXXX"
     }
   ],
   "softwareSuggestions": [
@@ -229,7 +227,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "10457.1KB",
+  "fileSize": "10388.822KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -237,21 +235,17 @@
       "author": [
         {
           "@type": "Person",
-          "givenName": "Katarzyna",
-          "familyName": "Markowska"
+          "givenName": "Author1_name",
+          "familyName": "Author1_surname"
         },
         {
           "@type": "Person",
-          "givenName": "Lechosław",
-          "familyName": "Kuczyński"
+          "givenName": "Author2_name",
+          "familyName": "Author2_surname"
         }
       ],
       "name": "mrangr: Mechanistic Metacommunity Simulator",
       "description": "R package version 1.0.1"
     }
-  ],
-  "releaseNotes": "https://github.com/popecol/mrangr/blob/master/NEWS.md",
-  "readme": "https://github.com/popecol/mrangr/blob/main/README.md",
-  "contIntegration": "https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml",
-  "developmentStatus": "https://www.repostatus.org/#active"
+  ]
 }

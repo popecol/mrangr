@@ -6,24 +6,22 @@
 \alias{mrangr-package}
 \title{mrangr: Mechanistic Metacommunity Simulator}
 \description{
-Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - 'rangr' (see \url{https://github.com/ropensci/rangr}), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.
+Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - 'XXXX' (see <XXXX>), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://popecol.github.io/mrangr/}
-  \item \url{https://github.com/popecol/mrangr}
-  \item \url{https://cran.r-project.org/web/packages/mrangr/index.html}
-  \item Report bugs at \url{https://github.com/popecol/mrangr/issues}
+  \item \url{XXXX}
+  \item Report bugs at \url{XXXX}
 }
 
 }
 \author{
-\strong{Maintainer}: Katarzyna Markowska \email{katarzyna.markowska@amu.edu.pl} [copyright holder]
+\strong{Maintainer}: Author1name Author1surname \email{Author1@anonimisedemail.com} [copyright holder]
 
 Authors:
 \itemize{
-  \item Lechosław Kuczyński \email{lechu@amu.edu.pl} [copyright holder]
+  \item Author2name Author2surname \email{Author2@anonimisedemail2.com} [copyright holder]
 }
 
 }

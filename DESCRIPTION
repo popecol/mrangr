@@ -2,12 +2,12 @@ Package: mrangr
 Title: Mechanistic Metacommunity Simulator
 Version: 1.0.1
 Authors@R: c(
-    person("Katarzyna", "Markowska", , "katarzyna.markowska@amu.edu.pl", role = c("aut", "cre", "cph")),
-    person("Lechosław", "Kuczyński", , "lechu@amu.edu.pl", role = c("aut", "cph"))
+    person("Author1name", "Author1surname", , "Author1@anonimisedemail.com", role = c("aut", "cre", "cph")),
+    person("Author2name", "Author2surname", , "Author2@anonimisedemail2.com", role = c("aut", "cph"))
   )
 Description: Flexible, mechanistic, and spatially explicit simulator of
-    metacommunities. It extends our previous package - 'rangr' (see
-    <https://github.com/ropensci/rangr>), which implemented a mechanistic
+    metacommunities. It extends our previous package - 'XXXX' (see
+    <XXXX>), which implemented a mechanistic
     virtual species simulator integrating population dynamics and
     dispersal. The 'mrangr' package adds the ability to simulate multiple
     species interacting through an asymmetric matrix of pairwise
@@ -44,6 +44,5 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-URL: https://popecol.github.io/mrangr/, https://github.com/popecol/mrangr, 
-    https://cran.r-project.org/web/packages/mrangr/index.html
-BugReports: https://github.com/popecol/mrangr/issues
+URL: XXXX
+BugReports: XXXX

@@ -1,6 +1,6 @@
 ---
 title: "How to use mrangr?"
-author: "Katarzyna Markowska"
+author: "Author1"
 date: "`r format(Sys.time(), '%d-%m-%Y')`"
 output: bookdown::html_document2
 vignette: >
@@ -34,8 +34,7 @@ K_map <- terra::rast("K_map.tif")
 This vignette demonstrates the main workflow of the `mrangr` package,
 which is designed to simulate metacommunities within a **spatially
 explicit, mechanistic framework**. The package builds upon the
-functionality of our earlier `rangr` package
-(<https://github.com/ropensci/rangr>), which focused on simulating
+functionality of our earlier `XXXX` package, which focused on simulating
 single-species population dynamics with dispersal.
 
 `mrangr` extends this by adding the ability to include **multiple
@@ -58,10 +57,15 @@ This vignette shows how to:
 
 The first step is to install and load the `mrangr` package.
 
-```{r load_mrangr, eval = FALSE}
-install.packages("mrangr")
+You can install `mrangr` with:
+
+```{r load_mrangr, eval=FALSE}
+devtools::install()
 library(mrangr)
 ```
+
+or using the "Install" button in "Build" tab in RStudio.
+
 
 Since the maps on which the simulation takes place must be in the
 `SpatRaster` format, we will also install and load the `terra` package
