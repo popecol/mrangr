@@ -111,7 +111,7 @@ type of biotic interaction.</p>
 package.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"mrangr"</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">mrangr</span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://popecol.github.io/mrangr/">mrangr</a></span><span class="op">)</span></span></code></pre></div>
 <p>Since the maps on which the simulation takes place must be in the
 <code>SpatRaster</code> format, we will also install and load the
 <code>terra</code> package to make them easier to manipulate and
@@ -137,13 +137,13 @@ datasets in the help files:</p>
 <code class="sourceCode R"><span><span class="co"># Carrying capacity</span></span>
 <span><span class="va">K_map_eg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"input_maps/K_map_eg.tif"</span>, package <span class="op">=</span> <span class="st">"mrangr"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">K_map_eg</span>, main <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"K_"</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">K_map_eg</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="mrangr_files/figure-html/eg_maps_plot-1.png" width="700"></p>
+<p><img src="mrangr_files/figure-html/eg_maps_plot-1.png" width="480"></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Initial abundance</span></span>
 <span><span class="va">n1_map_eg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"input_maps/n1_map_eg.tif"</span>, package <span class="op">=</span> <span class="st">"mrangr"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">n1_map_eg</span> ,main <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"n1_"</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">n1_map_eg</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="mrangr_files/figure-html/eg_maps_plot-2.png" width="700"></p>
+<p><img src="mrangr_files/figure-html/eg_maps_plot-2.png" width="480"></p>
 <p>Both of these rasters have <strong>four</strong> layers. This means
 that they are ready for simulations involving <strong>four</strong>
 species, with each layer representing either the carrying capacity or
@@ -179,7 +179,7 @@ however, any distribution can be used by specifying the appropriate
 quantile function.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">K_map</span>, main <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"K_"</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">K_map</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="mrangr_files/figure-html/K_sim_basic_plot-1.png" width="700"></p>
+<p><img src="mrangr_files/figure-html/K_sim_basic_plot-1.png" width="480"></p>
 </div>
 <div class="section level3">
 <h3 id="species-interactions">Species interactions<a class="anchor" aria-label="anchor" href="#species-interactions"></a>
@@ -306,7 +306,7 @@ simulation.</li>
 use the <code><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot()</a></code> function.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">first_sim</span>, time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="mrangr_files/figure-html/maps-1.png" width="700"></p>
+<p><img src="mrangr_files/figure-html/maps-1.png" width="480"></p>
 <p>The initial spatial distribution was set to be proportional to the
 carrying capacity of each species’ habitat, effectively representing
 their <strong>fundamental niches</strong>. Following the simulation,
@@ -323,7 +323,7 @@ mean species abundances over all time steps.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_series.html">plot_series</a></span><span class="op">(</span><span class="va">first_sim</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span><span class="st">"bottomright"</span>, title <span class="op">=</span> <span class="st">"Species"</span>, legend <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">nspec</span>, </span>
 <span>       lty <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">nspec</span>, lwd <span class="op">=</span> <span class="fl">2</span>, col <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">nspec</span><span class="op">)</span></span></code></pre></div>
-<p><img src="mrangr_files/figure-html/time_series-1.png" width="700"></p>
+<p><img src="mrangr_files/figure-html/time_series-1.png" width="480"></p>
 </div>
 </div>
 <div class="section level3">

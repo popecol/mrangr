@@ -18,20 +18,22 @@
 #' library(FieldSimR)
 #'
 #' # Community parameters
-#' nspec <- 3
+#' nspec <- 4
 #' nrows <- ncols <- 10
 #' xmin <- 250000; xmax <- xmin + nrows * 1000
 #' ymin <- 600000; ymax <- ymin + ncols * 1000
-#' id <- rast(nrows = nrows, ncols = ncols, xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax)
+#' id <- rast(nrows = nrows, ncols = ncols, xmin = xmin, xmax = xmax,
+#'                                          ymin = ymin, ymax = ymax)
 #' crs(id) <- "epsg:2180"
-#' plot(id)
 #'
 #' # Correlation matrix of carrying capacities
-#' cor_mat <- matrix(c(1, 0.29, 0.32, 0.29, 1, 0.32, 0.32, 0.32, 1), nrow = nspec, ncol = nspec)
+#' cor_mat <- FieldSimR::rand_cor_mat(nspec, -0.5, 0.5, pos.def = TRUE)
 #' cor_mat
 #'
-#' # Generate and define the distributions and parameters of correlated carrying capacity maps
-#' K_map <- K_sim(nspec, id, range = 20000, cor_mat = cor_mat, qfun = qlnorm, meanlog = 2, sdlog = 0.5)
+#' # Generate and define the distributions and parameters
+#' # of correlated carrying capacity maps
+#' K_map <- K_sim(nspec, id, range = 20000, cor_mat = cor_mat, qfun = qlnorm,
+#'                meanlog = 2, sdlog = 0.5)
 #' K_map
 #' hist(K_map)
 #' plot(K_map)

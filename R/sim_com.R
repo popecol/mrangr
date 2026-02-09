@@ -32,7 +32,7 @@
 #' simulated_com_02 <- sim_com(obj = community, time = 10, burn = 3)
 #' }
 #'
-sim_com <- function(obj, time, burn = 0, progress_bar = TRUE) {
+sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
 
   assert_that(
     inherits(obj, "sim_com_data"),

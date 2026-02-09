@@ -4,7 +4,7 @@
 \alias{sim_com}
 \title{Simulate Community Dynamics Over Time}
 \usage{
-sim_com(obj, time, burn = 0, progress_bar = TRUE)
+sim_com(obj, time, burn = 0, progress_bar = FALSE)
 }
 \arguments{
 \item{obj}{An object of class \code{sim_com_data}, as returned by \code{\link[=initialise_com]{initialise_com()}}.}

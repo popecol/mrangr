@@ -21,14 +21,14 @@
 #' @param use_names_K_map Logical. If `TRUE`, the layer names of `K_map` are
 #' used as species names. If `FALSE`, species are numbered sequentially
 #'   (`1:number_of_species`). Defaults to `TRUE`.
-#' @param ... Additional named arguments passed to [`initialise()`][rangr::initialise]. Each must be either length 1 or equal to the number of species.
+#' @param ... Additional named arguments passed to [`rangr::initialise()`][rangr::initialise]. Each must be either length 1 or equal to the number of species.
 #' \describe{
 #'   \item{kernel_args}{Optional. A list of lists, each containing named arguments for the corresponding
 #'   species' kernel function. Must be the same length as number of species.}
 #'   }
 #' @return A list of class `sim_com_data` containing:
 #' \describe{
-#'   \item{spec_data}{A list of `sim_data` objects (one per species) returned by [`initialise()`][rangr::initialise].}
+#'   \item{spec_data}{A list of `sim_data` objects (one per species) returned by [`rangr::initialise()`][rangr::initialise].}
 #'   \item{nspec}{The number of species.}
 #'   \item{a}{The interaction matrix.}
 #'   \item{r}{Intrinsic growth rate(s).}

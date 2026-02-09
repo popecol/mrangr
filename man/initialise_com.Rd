@@ -39,7 +39,7 @@ for every cell within the study area.}
 used as species names. If \code{FALSE}, species are numbered sequentially
 (\code{1:number_of_species}). Defaults to \code{TRUE}.}
 
-\item{...}{Additional named arguments passed to \code{\link[rangr:initialise]{initialise()}}. Each must be either length 1 or equal to the number of species.
+\item{...}{Additional named arguments passed to \code{\link[rangr:initialise]{rangr::initialise()}}. Each must be either length 1 or equal to the number of species.
 \describe{
 \item{kernel_args}{Optional. A list of lists, each containing named arguments for the corresponding
 species' kernel function. Must be the same length as number of species.}
@@ -48,7 +48,7 @@ species' kernel function. Must be the same length as number of species.}
 \value{
 A list of class \code{sim_com_data} containing:
 \describe{
-\item{spec_data}{A list of \code{sim_data} objects (one per species) returned by \code{\link[rangr:initialise]{initialise()}}.}
+\item{spec_data}{A list of \code{sim_data} objects (one per species) returned by \code{\link[rangr:initialise]{rangr::initialise()}}.}
 \item{nspec}{The number of species.}
 \item{a}{The interaction matrix.}
 \item{r}{Intrinsic growth rate(s).}

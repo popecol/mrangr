@@ -17,7 +17,7 @@ reference:
     - sim_com
     - summary.sim_com_results
 
-  - title: Results
+  - title: Post-processing
   - contents:
     - virtual_ecologist
     - to_rast.sim_com_results
@@ -42,3 +42,11 @@ reference:
   - title: internal
     contents:
     - matches("print")
+
+figures:
+  dev: ragg::agg_png
+  dpi: 96
+  fig.width: 5
+  fig.height: 6    # Explicitly set a taller height
+  fig.asp: ~       # We set this to ~ (null) so it doesn't override fig.height
+  fig.retina: 2

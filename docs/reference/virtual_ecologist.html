@@ -130,24 +130,24 @@ that defines the observation process: "<code><a href="https://rdrr.io/r/stats/Lo
 <span class="r-in"><span><span class="co"># Option 1: Randomly sample sites (the same for each year)</span></span></span>
 <span class="r-in"><span><span class="va">sampled_data_01</span> <span class="op">&lt;-</span> <span class="fu">virtual_ecologist</span><span class="op">(</span><span class="va">simulated_com</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/headtail.html" class="external-link">head</a></span><span class="op">(</span><span class="va">sampled_data_01</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    id      x      y species time  n</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 161 260500 604500       1    1  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 123 252500 606500       1    1  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 161 260500 604500       2    1 11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 123 252500 606500       2    1  6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 161 260500 604500       3    1  0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 123 252500 606500       3    1  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    id      x      y species time n</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 125 254500 606500       1    1 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 222 261500 600500       1    1 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 125 254500 606500       2    1 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 222 261500 600500       2    1 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 125 254500 606500       3    1 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 222 261500 600500       3    1 0</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Option 2: Randomly sample sites (different for each year)</span></span></span>
 <span class="r-in"><span><span class="va">sampled_data_02</span> <span class="op">&lt;-</span> <span class="fu">virtual_ecologist</span><span class="op">(</span><span class="va">simulated_com</span>, type <span class="op">=</span> <span class="st">"random_all_layers"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/headtail.html" class="external-link">head</a></span><span class="op">(</span><span class="va">sampled_data_02</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    id      x      y species time n</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  74 263500 610500       1    1 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 215 254500 600500       1    1 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 187 256500 602500       1    2 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 208 262500 601500       1    2 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  63 252500 610500       1    3 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  86 260500 609500       1    3 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 166 250500 603500       1    1 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  11 260500 614500       1    1 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 191 260500 602500       1    2 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 202 256500 601500       1    2 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 128 257500 606500       1    3 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 135 264500 606500       1    3 0</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Option 3: Sample sites based on user-provided data frame</span></span></span>
 <span class="r-in"><span><span class="va">custom_sites</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
@@ -177,8 +177,8 @@ that defines the observation process: "<code><a href="https://rdrr.io/r/stats/Lo
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 211 250500 600500       1    1  0.00000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 183 252500 602500       1   10  0.00000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 155 254500 604500       1   20  0.00000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 211 250500 600500       2    1 12.82538</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 183 252500 602500       2   10  2.41024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 211 250500 600500       2    1 19.82462</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 183 252500 602500       2   10  2.07800</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 155 254500 604500       2   20  0.00000</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Option 5. Add noise - "rbinom"</span></span></span>
@@ -194,7 +194,7 @@ that defines the observation process: "<code><a href="https://rdrr.io/r/stats/Lo
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 183 252500 602500       1   10  0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 155 254500 604500       1   20  0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4 211 250500 600500       2    1 15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 183 252500 602500       2   10  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 183 252500 602500       2   10  2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 155 254500 604500       2   20  0</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>

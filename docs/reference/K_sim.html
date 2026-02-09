@@ -94,42 +94,44 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/crWerner/fieldsimr" class="external-link">FieldSimR</a></span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>package 'FieldSimR' was built under R version 4.3.3</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Community parameters</span></span></span>
-<span class="r-in"><span><span class="va">nspec</span> <span class="op">&lt;-</span> <span class="fl">3</span></span></span>
+<span class="r-in"><span><span class="va">nspec</span> <span class="op">&lt;-</span> <span class="fl">4</span></span></span>
 <span class="r-in"><span><span class="va">nrows</span> <span class="op">&lt;-</span> <span class="va">ncols</span> <span class="op">&lt;-</span> <span class="fl">10</span></span></span>
 <span class="r-in"><span><span class="va">xmin</span> <span class="op">&lt;-</span> <span class="fl">250000</span>; <span class="va">xmax</span> <span class="op">&lt;-</span> <span class="va">xmin</span> <span class="op">+</span> <span class="va">nrows</span> <span class="op">*</span> <span class="fl">1000</span></span></span>
 <span class="r-in"><span><span class="va">ymin</span> <span class="op">&lt;-</span> <span class="fl">600000</span>; <span class="va">ymax</span> <span class="op">&lt;-</span> <span class="va">ymin</span> <span class="op">+</span> <span class="va">ncols</span> <span class="op">*</span> <span class="fl">1000</span></span></span>
-<span class="r-in"><span><span class="va">id</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span>nrows <span class="op">=</span> <span class="va">nrows</span>, ncols <span class="op">=</span> <span class="va">ncols</span>, xmin <span class="op">=</span> <span class="va">xmin</span>, xmax <span class="op">=</span> <span class="va">xmax</span>, ymin <span class="op">=</span> <span class="va">ymin</span>, ymax <span class="op">=</span> <span class="va">ymax</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">id</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span>nrows <span class="op">=</span> <span class="va">nrows</span>, ncols <span class="op">=</span> <span class="va">ncols</span>, xmin <span class="op">=</span> <span class="va">xmin</span>, xmax <span class="op">=</span> <span class="va">xmax</span>,</span></span>
+<span class="r-in"><span>                                         ymin <span class="op">=</span> <span class="va">ymin</span>, ymax <span class="op">=</span> <span class="va">ymax</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/crs.html" class="external-link">crs</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"epsg:2180"</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="K_sim-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Correlation matrix of carrying capacities</span></span></span>
-<span class="r-in"><span><span class="va">cor_mat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.29</span>, <span class="fl">0.32</span>, <span class="fl">0.29</span>, <span class="fl">1</span>, <span class="fl">0.32</span>, <span class="fl">0.32</span>, <span class="fl">0.32</span>, <span class="fl">1</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="va">nspec</span>, ncol <span class="op">=</span> <span class="va">nspec</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">cor_mat</span> <span class="op">&lt;-</span> <span class="fu">FieldSimR</span><span class="fu">::</span><span class="fu"><a href="https://crwerner.github.io/fieldsimr/reference/rand_cor_mat.html" class="external-link">rand_cor_mat</a></span><span class="op">(</span><span class="va">nspec</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, pos.def <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 'cor_mat' is already positive (semi)-definite, matrix was not altered</span>
 <span class="r-in"><span><span class="va">cor_mat</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      [,1] [,2] [,3]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1,] 1.00 0.29 0.32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2,] 0.29 1.00 0.32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3,] 0.32 0.32 1.00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            1          2          3          4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1.0000000 -0.2575874 -0.2555569 -0.2850834</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 -0.2575874  1.0000000  0.1592346 -0.4893887</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 -0.2555569  0.1592346  1.0000000 -0.4530357</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 -0.2850834 -0.4893887 -0.4530357  1.0000000</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Generate and define the distributions and parameters of correlated carrying capacity maps</span></span></span>
-<span class="r-in"><span><span class="va">K_map</span> <span class="op">&lt;-</span> <span class="fu">K_sim</span><span class="op">(</span><span class="va">nspec</span>, <span class="va">id</span>, range <span class="op">=</span> <span class="fl">20000</span>, cor_mat <span class="op">=</span> <span class="va">cor_mat</span>, qfun <span class="op">=</span> <span class="va">qlnorm</span>, meanlog <span class="op">=</span> <span class="fl">2</span>, sdlog <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># Generate and define the distributions and parameters</span></span></span>
+<span class="r-in"><span><span class="co"># of correlated carrying capacity maps</span></span></span>
+<span class="r-in"><span><span class="va">K_map</span> <span class="op">&lt;-</span> <span class="fu">K_sim</span><span class="op">(</span><span class="va">nspec</span>, <span class="va">id</span>, range <span class="op">=</span> <span class="fl">20000</span>, cor_mat <span class="op">=</span> <span class="va">cor_mat</span>, qfun <span class="op">=</span> <span class="va">qlnorm</span>,</span></span>
+<span class="r-in"><span>               meanlog <span class="op">=</span> <span class="fl">2</span>, sdlog <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">K_map</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> dimensions  : 10, 10, 3  (nrow, ncol, nlyr)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dimensions  : 10, 10, 4  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 1000, 1000  (x, y)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 250000, 260000, 6e+05, 610000  (xmin, xmax, ymin, ymax)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : ETRF2000-PL / CS92 (EPSG:2180) </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> source(s)   : memory</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> names       :        1,         2,         3 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :  2.98469,  3.059735,  2.860587 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max values  : 19.70115, 19.293218, 25.852616 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names       :         1,         2,         3,         4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :  1.803381,  2.968255,  2.672162,  2.424431 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max values  : 21.301051, 20.423516, 19.818046, 26.819540 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/hist.html" class="external-link">hist</a></span><span class="op">(</span><span class="va">K_map</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="K_sim-2.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="K_sim-1.png" alt="" width="480" height="576"></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">K_map</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="K_sim-3.png" alt="" width="700" height="433"></span>
+<span class="r-plt img"><img src="K_sim-2.png" alt="" width="480" height="576"></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
