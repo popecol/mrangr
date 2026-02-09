@@ -5,8 +5,8 @@ bibentry(
   bibtype = "manual",
   title = "mrangr: Mechanistic Metacommunity Simulator",
   author = c(
-    person("Katarzyna", "Markowska"),
-    person("Lechosław", "Kuczyński")),
+    person("Author1_name", "Author1_surname"),
+    person("Author2_name", "Author2_surname")),
   year = "2025",
   note = "R package version 1.0.1"
 )

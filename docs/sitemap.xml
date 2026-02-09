@@ -1,111 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://popecol.github.io/mrangr/authors.html</loc>
+    <loc>/authors.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/LICENSE.html</loc>
+    <loc>/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/LICENSE-text.html</loc>
+    <loc>/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/index.html</loc>
+    <loc>/index.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/index.html</loc>
+    <loc>/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/a_eg.html</loc>
+    <loc>/reference/mrangr-package.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/community_eg.html</loc>
+    <loc>/reference/a_eg.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/diagonal.html</loc>
+    <loc>/reference/diagonal.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/get_community.html</loc>
+    <loc>/reference/grf.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/get_simulated_com.html</loc>
+    <loc>/reference/initialise_com.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/grf.html</loc>
+    <loc>/reference/initialise_inv.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/initialise_com.html</loc>
+    <loc>/reference/K_sim.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/initialise_inv.html</loc>
+    <loc>/reference/plot.sim_com_results.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/K_map_eg.tif.html</loc>
+    <loc>/reference/plot_series.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/K_sim.html</loc>
+    <loc>/reference/print.sim_com_data.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/mrangr-package.html</loc>
+    <loc>/reference/print.sim_com_results.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/n1_map_eg.tif.html</loc>
+    <loc>/reference/print.summary.sim_com_data.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/plot.sim_com_results.html</loc>
+    <loc>/reference/print.summary.sim_com_results.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/plot_series.html</loc>
+    <loc>/reference/set_zero.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/print.sim_com_data.html</loc>
+    <loc>/reference/sim_com.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/print.sim_com_results.html</loc>
+    <loc>/reference/summary.sim_com_data.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/print.summary.sim_com_data.html</loc>
+    <loc>/reference/summary.sim_com_results.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/print.summary.sim_com_results.html</loc>
+    <loc>/reference/to_rast.sim_com_results.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/reexports.html</loc>
+    <loc>/reference/update.sim_com_data.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/set_zero.html</loc>
+    <loc>/reference/K_map_eg.tif.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/simulated_com_eg.html</loc>
+    <loc>/reference/community_eg.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/sim_com.html</loc>
+    <loc>/reference/get_community.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/summary.sim_com_data.html</loc>
+    <loc>/reference/get_simulated_com.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/summary.sim_com_results.html</loc>
+    <loc>/reference/n1_map_eg.tif.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/to_rast.sim_com_results.html</loc>
+    <loc>/reference/reexports.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/update.sim_com_data.html</loc>
+    <loc>/reference/simulated_com_eg.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/reference/virtual_ecologist.html</loc>
+    <loc>/reference/virtual_ecologist.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/404.html</loc>
+    <loc>/404.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/articles/index.html</loc>
+    <loc>/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/articles/mrangr.html</loc>
+    <loc>/articles/mrangr.html</loc>
   </url>
   <url>
-    <loc>https://popecol.github.io/mrangr/news/index.html</loc>
+    <loc>/news/index.html</loc>
   </url>
 </urlset>

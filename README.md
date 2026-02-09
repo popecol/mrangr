@@ -3,20 +3,18 @@
 
 <!-- badges: start -->
 
-[![CRAN
-release](https://www.r-pkg.org/badges/version/mrangr?color=green)](https://cran.r-project.org/package=mrangr)
-[![Project Status: Active – The project has reached a stable, usable
+![CRAN release](https://www.r-pkg.org/badges/version/mrangr?color=green)
+![Project Status: Active – The project has reached a stable, usable
 state and is being actively
-developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![R-CMD-check](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml)
-[![codecov](https://codecov.io/github/popecol/mrangr/graph/badge.svg?token=LF3PYFLBDN)](https://codecov.io/github/popecol/mrangr)
+developed.](https://www.repostatus.org/badges/latest/active.svg)
+![R-CMD-check](https://img.shields.io/badge/R_CMD_check_anonimised-passing-brightgreen?logo=github)
+![codecov](https://img.shields.io/badge/codecov_anonimised-98%25-brightgreen?logo=codecov)
 <!-- badges: end -->
 
 The **mrangr** package is designed to simulate metacommunities within a
 **spatially explicit, mechanistic framework**. It extends the
-functionality of the [`rangr`](https://github.com/ropensci/rangr)
-package by allowing for the simulation of **multiple interacting
-species** via an asymmetric interaction matrix.
+functionality of the `XXXX` package by allowing for the simulation of
+**multiple interacting species** via an asymmetric interaction matrix.
 
 This tool mimics the essential processes shaping metacommunity dynamics:
 local population growth, dispersal, and interspecific interactions.
@@ -28,8 +26,10 @@ of community shifts in response to environmental changes.
 You can install **mrangr** with:
 
 ``` r
-install.packages("mrangr")
+devtools::install()
 ```
+
+or using the “Install” button in “Build” tab in RStudio.
 
 ## Basic Workflow
 
@@ -121,6 +121,5 @@ citation("mrangr")
 
 ## Funding
 
-This work was supported by the National Science Centre, Poland, grant
-no. 2018/29/B/NZ8/00066 and the Poznań Supercomputing and Networking
-Centre (grant no. pl0090-01).
+This work was supported by the XXXX, grant no. XXXX and the XXXX (grant
+no. XXXX).

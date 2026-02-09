@@ -1,7 +1,3 @@
-url: https://popecol.github.io/mrangr/
-template:
-  bootstrap: 5
-
 reference:
   - title: Simulation preparation
   - contents:
