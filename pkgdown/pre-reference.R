@@ -22,3 +22,4 @@ abs_rnorm <- function(n, mean, sd) {
 # Force it into GlobalEnv so match.fun() can see it from within package calls
 assign("abs_rnorm", abs_rnorm, envir = .GlobalEnv)
 
+set.seed(123)
