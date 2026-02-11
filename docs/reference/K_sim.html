@@ -104,11 +104,11 @@
 <span class="r-in"><span><span class="va">cor_mat</span> <span class="op">&lt;-</span> <span class="fu">FieldSimR</span><span class="fu">::</span><span class="fu"><a href="https://crwerner.github.io/fieldsimr/reference/rand_cor_mat.html" class="external-link">rand_cor_mat</a></span><span class="op">(</span><span class="va">nspec</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, pos.def <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 'cor_mat' is already positive (semi)-definite, matrix was not altered</span>
 <span class="r-in"><span><span class="va">cor_mat</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            1          2          3          4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1.0000000  0.3467879 -0.1690656  0.1585051</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.3467879  1.0000000 -0.4888391 -0.3452441</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 -0.1690656 -0.4888391  1.0000000 -0.3379313</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.1585051 -0.3452441 -0.3379313  1.0000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            1           2           3          4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1.0000000 -0.33894017 -0.15078403 -0.2789575</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 -0.3389402  1.00000000 -0.02033296 -0.1755134</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 -0.1507840 -0.02033296  1.00000000  0.1261234</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 -0.2789575 -0.17551340  0.12612338  1.0000000</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Generate and define the distributions and parameters</span></span></span>
 <span class="r-in"><span><span class="co"># of correlated carrying capacity maps</span></span></span>
@@ -121,9 +121,9 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 250000, 260000, 6e+05, 610000  (xmin, xmax, ymin, ymax)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : ETRF2000-PL / CS92 (EPSG:2180) </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> source(s)   : memory</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> names       :         1,        2,         3,         4 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :  1.735043,  2.69583,  2.134534,  2.276007 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max values  : 18.181619, 38.00414, 23.812941, 24.144678 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names       :         1,         2,         3,         4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :  2.722691,  2.536525,  2.974664,  2.777643 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max values  : 23.428761, 25.448496, 25.373066, 27.841819 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/hist.html" class="external-link">hist</a></span><span class="op">(</span><span class="va">K_map</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="K_sim-1.png" alt="" width="480" height="576"></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">K_map</span><span class="op">)</span></span></span>

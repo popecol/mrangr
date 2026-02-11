@@ -34,7 +34,7 @@ K_map <- terra::rast("K_map.tif")
 This vignette demonstrates the main workflow of the `mrangr` package,
 which is designed to simulate metacommunities within a **spatially
 explicit, mechanistic framework**. The package builds upon the
-functionality of our earlier `XXXX` package, which focused on simulating
+functionality of the `rangr` package, which focused on simulating
 single-species population dynamics with dispersal.
 
 `mrangr` extends this by adding the ability to include **multiple
