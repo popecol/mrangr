@@ -6,7 +6,7 @@
 \alias{mrangr-package}
 \title{mrangr: Mechanistic Metacommunity Simulator}
 \description{
-Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - 'XXXX' (see <XXXX>), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.
+Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends the 'rangr' package, which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.
 }
 \seealso{
 Useful links:

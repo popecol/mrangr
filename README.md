@@ -14,7 +14,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)
 
 The **mrangr** package is designed to simulate metacommunities within a
 **spatially explicit, mechanistic framework**. It extends the
-functionality of the `XXXX` package by allowing for the simulation of
+functionality of the `rangr` package by allowing for the simulation of
 **multiple interacting species** via an asymmetric interaction matrix.
 
 This tool mimics the essential processes shaping metacommunity dynamics:
