@@ -8,8 +8,8 @@
 ![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)
-![R-CMD-check](https://img.shields.io/badge/R_CMD_check_anonimised-passing-brightgreen?logo=github)
-![codecov](https://img.shields.io/badge/codecov_anonimised-98%25-brightgreen?logo=codecov)
+![R-CMD-check](https://img.shields.io/badge/R_CMD_check_anonymised-passing-brightgreen?logo=github)
+![codecov](https://img.shields.io/badge/codecov_anonymised-98%25-brightgreen?logo=codecov)
 
 <!-- badges: end -->
 
