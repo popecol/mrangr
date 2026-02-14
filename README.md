@@ -3,13 +3,14 @@
 
 <!-- badges: start -->
 
-
 ![CRAN release](https://www.r-pkg.org/badges/version/mrangr?color=green)
+![DOI](https://img.shields.io/badge/DOI-XX.XXXX%2Fzenodo.XXXXXX-blue)
 ![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)
 ![R-CMD-check](https://img.shields.io/badge/R_CMD_check_anonimised-passing-brightgreen?logo=github)
 ![codecov](https://img.shields.io/badge/codecov_anonimised-98%25-brightgreen?logo=codecov)
+
 <!-- badges: end -->
 
 The **mrangr** package is designed to simulate metacommunities within a

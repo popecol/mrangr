@@ -259,8 +259,7 @@ separate. The resulting distribution maps illustrate the species’ final
 
 #### Over time
 
-We can also use the
-[`plot_series()`](https://popecol.github.io/mrangr/reference/plot_series.md)
+We can also use the [`plot_series()`](../reference/plot_series.md)
 function to plot the mean species abundances over all time steps.
 
 ``` r
@@ -274,12 +273,11 @@ legend("bottomright", title = "Species", legend = 1:nspec,
 ### Virtual ecologist
 
 The final component in this basic workflow is the
-[`virtual_ecologist()`](https://popecol.github.io/mrangr/reference/virtual_ecologist.md)
-function. It serves to simulate the real-world observation process,
-allowing the user to sample the simulated community abundances at
-defined points in space and time. This step is crucial for incorporating
-the effects of sampling effort and detection probability into the
-analysis.
+[`virtual_ecologist()`](../reference/virtual_ecologist.md) function. It
+serves to simulate the real-world observation process, allowing the user
+to sample the simulated community abundances at defined points in space
+and time. This step is crucial for incorporating the effects of sampling
+effort and detection probability into the analysis.
 
 ``` r
 ve <- virtual_ecologist(
@@ -322,10 +320,10 @@ The output `data.frame` includes the following six columns:
 - `n`: Sampled abundance.
 
 An alternative usage of
-[`virtual_ecologist()`](https://popecol.github.io/mrangr/reference/virtual_ecologist.md)
-is to supply a `data.frame` that pre-defines the sampling design,
-containing the columns `"x"`, `"y"`, and `"time"`. This specifies the
-spatial and temporal points of interest for observation.
+[`virtual_ecologist()`](../reference/virtual_ecologist.md) is to supply
+a `data.frame` that pre-defines the sampling design, containing the
+columns `"x"`, `"y"`, and `"time"`. This specifies the spatial and
+temporal points of interest for observation.
 
 ## Summary
 
@@ -333,17 +331,15 @@ In this vignette, we demonstrated the key functionalities of the
 `mrangr` package, specifically how to:
 
 - Initialize a multi-species community using the
-  [`initialise_com()`](https://popecol.github.io/mrangr/reference/initialise_com.md)
-  function.
+  [`initialise_com()`](../reference/initialise_com.md) function.
 - Run spatially explicit simulations with
-  [`sim_com()`](https://popecol.github.io/mrangr/reference/sim_com.md).
+  [`sim_com()`](../reference/sim_com.md).
 - Visualize outputs using
   [`plot()`](https://rspatial.github.io/terra/reference/plot.html) and
   track abundance changes over time with
-  [`plot_series()`](https://popecol.github.io/mrangr/reference/plot_series.md).
+  [`plot_series()`](../reference/plot_series.md).
 - Generate simulated observation data (sampling) via the
-  [`virtual_ecologist()`](https://popecol.github.io/mrangr/reference/virtual_ecologist.md)
-  function.
+  [`virtual_ecologist()`](../reference/virtual_ecologist.md) function.
 
 Collectively, these tools establish `mrangr` as a powerful framework for
 **mechanistic, spatially explicit metacommunity simulation**.

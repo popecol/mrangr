@@ -2,7 +2,7 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "mrangr",
-  "description": "Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - 'XXXX' (see <XXXX>), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.",
+  "description": "Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends the 'rangr' package, which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.",
   "name": "mrangr: Mechanistic Metacommunity Simulator",
   "issueTracker": "XXXX",
   "license": "https://spdx.org/licenses/MIT",
@@ -12,7 +12,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.3.0 (2023-04-21 ucrt)",
+  "runtimePlatform": "R version 4.5.2 (2025-10-31 ucrt)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -22,37 +22,37 @@
   "author": [
     {
       "@type": "Person",
-      "givenName": "Author1_name",
-      "familyName": "Author1_surname",
-      "email": "XXXX"
+      "givenName": "Author1name",
+      "familyName": "Author1surname",
+      "email": "Author1@anonimisedemail.com"
     },
     {
       "@type": "Person",
-      "givenName": "Author2_name",
-      "familyName": "Author2_surname",
-      "email": "XXXX"
+      "givenName": "Author2name",
+      "familyName": "Author2surname",
+      "email": "Author2@anonimisedemail2.com"
     }
   ],
   "copyrightHolder": [
     {
       "@type": "Person",
-      "givenName": "Author1_name",
-      "familyName": "Author1_surname",
-      "email": "XXXX"
+      "givenName": "Author1name",
+      "familyName": "Author1surname",
+      "email": "Author1@anonimisedemail.com"
     },
     {
       "@type": "Person",
-      "givenName": "Author2_name",
-      "familyName": "Author2_surname",
-      "email": "XXXX"
+      "givenName": "Author2name",
+      "familyName": "Author2surname",
+      "email": "Author2@anonimisedemail2.com"
     }
   ],
   "maintainer": [
     {
       "@type": "Person",
-      "givenName": "Author1_name",
-      "familyName": "Author1_surname",
-      "email": "XXXX"
+      "givenName": "Author1name",
+      "familyName": "Author1surname",
+      "email": "Author1@anonimisedemail.com"
     }
   ],
   "softwareSuggestions": [
@@ -172,7 +172,14 @@
     "8": {
       "@type": "SoftwareApplication",
       "identifier": "mgcv",
-      "name": "mgcv"
+      "name": "mgcv",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=mgcv"
     },
     "9": {
       "@type": "SoftwareApplication",
@@ -227,7 +234,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "10388.822KB",
+  "fileSize": "10727.517KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

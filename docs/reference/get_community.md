@@ -17,7 +17,7 @@ abundance maps.
 
 ## See also
 
-[community_eg](https://popecol.github.io/mrangr/reference/community_eg.md)
+[community_eg](community_eg.md)
 
 ## Examples
 

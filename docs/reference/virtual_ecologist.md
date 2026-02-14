@@ -21,9 +21,8 @@ virtual_ecologist(
 
 - obj:
 
-  An object created by the
-  [`sim_com()`](https://popecol.github.io/mrangr/reference/sim_com.md)
-  function, containing simulation data.
+  An object created by the [`sim_com()`](sim_com.md) function,
+  containing simulation data.
 
 - type:
 
@@ -89,24 +88,24 @@ simulated_com <- get_simulated_com()
 # Option 1: Randomly sample sites (the same for each year)
 sampled_data_01 <- virtual_ecologist(simulated_com)
 head(sampled_data_01)
-#>    id      x      y species time  n
-#> 1 132 261500 606500       1    1  0
-#> 2 213 252500 600500       1    1  0
-#> 3 132 261500 606500       2    1  9
-#> 4 213 252500 600500       2    1 16
-#> 5 132 261500 606500       3    1  0
-#> 6 213 252500 600500       3    1  0
+#>   id      x      y species time n
+#> 1 57 261500 611500       1    1 0
+#> 2 89 263500 609500       1    1 0
+#> 3 57 261500 611500       2    1 3
+#> 4 89 263500 609500       2    1 2
+#> 5 57 261500 611500       3    1 0
+#> 6 89 263500 609500       3    1 0
 
 # Option 2: Randomly sample sites (different for each year)
 sampled_data_02 <- virtual_ecologist(simulated_com, type = "random_all_layers")
 head(sampled_data_02)
 #>    id      x      y species time n
-#> 1 124 253500 606500       1    1 0
-#> 2  95 254500 608500       1    1 0
-#> 3 216 255500 600500       1    2 0
-#> 4 146 260500 605500       1    2 0
-#> 5 139 253500 605500       1    3 0
-#> 6  31 250500 612500       1    3 0
+#> 1 158 257500 604500       1    1 0
+#> 2   6 255500 614500       1    1 0
+#> 3  95 254500 608500       1    2 0
+#> 4 170 254500 603500       1    2 0
+#> 5  22 256500 613500       1    3 0
+#> 6  28 262500 613500       1    3 0
 
 # Option 3: Sample sites based on user-provided data frame
 custom_sites <- data.frame(
@@ -136,8 +135,8 @@ head(sampled_data_04)
 #> 1 211 250500 600500       1    1  0.000000
 #> 2 183 252500 602500       1   10  0.000000
 #> 3 155 254500 604500       1   20  0.000000
-#> 4 211 250500 600500       2    1 18.699968
-#> 5 183 252500 602500       2   10  1.912723
+#> 4 211 250500 600500       2    1 18.010816
+#> 5 183 252500 602500       2   10  1.584975
 #> 6 155 254500 604500       2   20  0.000000
 
 # Option 5. Add noise - "rbinom"
@@ -152,7 +151,7 @@ head(sampled_data_05)
 #> 1 211 250500 600500       1    1  0
 #> 2 183 252500 602500       1   10  0
 #> 3 155 254500 604500       1   20  0
-#> 4 211 250500 600500       2    1 15
+#> 4 211 250500 600500       2    1 16
 #> 5 183 252500 602500       2   10  2
 #> 6 155 254500 604500       2   20  0
 

@@ -16,7 +16,7 @@ community over time.
 
 ## See also
 
-[simulated_com_eg](https://popecol.github.io/mrangr/reference/simulated_com_eg.md)
+[simulated_com_eg](simulated_com_eg.md)
 
 ## Examples
 

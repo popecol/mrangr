@@ -2,13 +2,10 @@
 
 [`SpatRaster`](https://rspatial.github.io/terra/reference/SpatRaster-class.html)
 object with 4 layer that can be passed to
-[`initialise_com`](https://popecol.github.io/mrangr/reference/initialise_com.md)
-a as simulation
-([`sim_com`](https://popecol.github.io/mrangr/reference/sim_com.md))
-starting point.
+[`initialise_com`](initialise_com.md) a as simulation
+([`sim_com`](sim_com.md)) starting point.
 
-This map is compatible with
-[`K_map_eg.tif`](https://popecol.github.io/mrangr/reference/K_map_eg.tif.md).
+This map is compatible with [`K_map_eg.tif`](K_map_eg.tif.md).
 
 ## Format
 

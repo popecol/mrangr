@@ -1,8 +1,7 @@
 # Update `sim_com_data` Object
 
 Updates the parameters used to create a `sim_com_data` object, returned
-by
-[`initialise_com()`](https://popecol.github.io/mrangr/reference/initialise_com.md).
+by [`initialise_com()`](initialise_com.md).
 
 ## Usage
 
@@ -16,14 +15,14 @@ update(object, ..., evaluate = TRUE)
 - object:
 
   A `sim_com_data` object, as returned by
-  [`initialise_com()`](https://popecol.github.io/mrangr/reference/initialise_com.md).
+  [`initialise_com()`](initialise_com.md).
 
 - ...:
 
   Named arguments to update. These should be valid arguments to
-  [`initialise_com()`](https://popecol.github.io/mrangr/reference/initialise_com.md).
-  If `kernel_fun` is updated, any associated `kernel_args` (if present
-  in previous call) will also be replaced.
+  [`initialise_com()`](initialise_com.md). If `kernel_fun` is updated,
+  any associated `kernel_args` (if present in previous call) will also
+  be replaced.
 
 - evaluate:
 
@@ -48,7 +47,7 @@ updated function call.
 
 ## See also
 
-[`initialise_com()`](https://popecol.github.io/mrangr/reference/initialise_com.md)
+[`initialise_com()`](initialise_com.md)
 
 ## Examples
 
