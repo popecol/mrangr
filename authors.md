@@ -9,7 +9,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/popecol/mrangr/blob/v1.0.1/inst/CITATION)
+[`inst/CITATION`](https://github.com/popecol/mrangr/blob/main/inst/CITATION)
 
 Markowska K, Kuczyński L (2025). *mrangr: Mechanistic Metacommunity
 Simulator*. R package version 1.0.1.
