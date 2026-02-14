@@ -21,7 +21,9 @@ load("inst/extdata/readme/first_sim.rda")
 
 <!-- badges: start -->
 
-[![CRAN release](https://www.r-pkg.org/badges/version/mrangr?color=green)](https://cran.r-project.org/package=mrangr) [![Project Status: Active -- The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![CRAN release](https://www.r-pkg.org/badges/version/mrangr?color=green)](https://cran.r-project.org/package=mrangr) 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18641951.svg)](https://doi.org/10.5281/zenodo.18641951)
+[![Project Status: Active -- The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml) [![codecov](https://codecov.io/github/popecol/mrangr/graph/badge.svg?token=LF3PYFLBDN)](https://codecov.io/github/popecol/mrangr)
 <!-- badges: end -->
 

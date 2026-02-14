@@ -5,6 +5,7 @@
 
 [![CRAN
 release](https://www.r-pkg.org/badges/version/mrangr?color=green)](https://cran.r-project.org/package=mrangr)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18641951.svg)](https://doi.org/10.5281/zenodo.18641951)
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
@@ -94,14 +95,14 @@ abundance over time.
 plot(first_sim, time = c(1, 10, 100))
 ```
 
-<img src="man/figures/README-vis-1.png" width="100%" />
+<img src="man/figures/README-vis-1.png" alt="" width="100%" />
 
 ``` r
 # Plot abundance time series for all species
 plot_series(first_sim)
 ```
 
-<img src="man/figures/README-vis-2.png" width="100%" />
+<img src="man/figures/README-vis-2.png" alt="" width="100%" />
 
 ## Virtual Ecologist
 
