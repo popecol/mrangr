@@ -16,6 +16,7 @@ of community shifts in response to environmental changes.
 You can install **mrangr** with:
 
 ``` r
+
 install.packages("mrangr")
 ```
 
@@ -28,20 +29,22 @@ the results.
 ### 1. Input Maps and Interactions
 
 You must provide carrying capacity maps (`K_map`) and initial abundance
-maps (`n1_map`) as `SpatRaster` objects. For a community of $N$ species,
-the rasters must contain $N$ layers.
+maps (`n1_map`) as `SpatRaster` objects. For a community of $`N`$
+species, the rasters must contain $`N`$ layers.
 
 ``` r
+
 # Load example maps
 K_map <- rast(system.file("input_maps/K_map_eg.tif", package = "mrangr"))
 K_map <- subset(K_map, 1:2)
 ```
 
 Interspecific interactions are defined using an **interaction matrix**
-($a$), where values represent the per-capita interaction strength of the
-species in the column on the species in the row.
+($`a`$), where values represent the per-capita interaction strength of
+the species in the column on the species in the row.
 
 ``` r
+
 # Example for 2 species with symmetric competition
 nspec <- 2
 a <- matrix(c(NA, -0.8, -0.8, NA), nrow = nspec, ncol = nspec)
@@ -52,9 +55,10 @@ a <- matrix(c(NA, -0.8, -0.8, NA), nrow = nspec, ncol = nspec)
 Use
 [`initialise_com()`](https://popecol.github.io/mrangr/reference/initialise_com.md)
 to create a `sim_com_data` object. This stores all parameters, including
-the intrinsic growth rate ($r$) and the dispersal rate.
+the intrinsic growth rate ($`r`$) and the dispersal rate.
 
 ``` r
+
 first_com <- initialise_com(
   n1_map = round(K_map / 2), 
   K_map = K_map, 
@@ -70,6 +74,7 @@ The [`sim_com()`](https://popecol.github.io/mrangr/reference/sim_com.md)
 function executes the simulation over a specified number of time steps.
 
 ``` r
+
 first_sim <- sim_com(first_com, time = 100)
 ```
 
@@ -79,6 +84,7 @@ You can visualise the final spatial distributions or the change in mean
 abundance over time.
 
 ``` r
+
 # Visualise spatial niches at specific time steps
 plot(first_sim, time = c(1, 10, 100))
 ```
@@ -86,6 +92,7 @@ plot(first_sim, time = c(1, 10, 100))
 ![](reference/figures/README-vis-1.png)
 
 ``` r
+
 # Plot abundance time series for all species
 plot_series(first_sim)
 ```
@@ -107,6 +114,7 @@ To cite **mrangr**, please use the
 [`citation()`](https://rdrr.io/r/utils/citation.html) function:
 
 ``` r
+
 library(mrangr)
 citation("mrangr")
 ```

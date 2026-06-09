@@ -24,13 +24,13 @@ Data generated in-house to serve as an example.
 
 ``` r
 terra::rast(system.file("input_maps/n1_map_eg.tif", package = "mrangr"))
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 15, 15, 4  (nrow, ncol, nlyr)
 #> resolution  : 1000, 1000  (x, y)
-#> extent      : 250000, 265000, 6e+05, 615000  (xmin, xmax, ymin, ymax)
-#> coord. ref. : ETRF2000-PL / CS92 (EPSG:2180) 
-#> source      : n1_map_eg.tif 
-#> names       :  1,  2,  3,  4 
-#> min values  :  1,  0,  0,  0 
-#> max values  : 39, 20, 35, 31 
+#> extent      : 250000, 265000, 600000, 615000  (xmin, xmax, ymin, ymax)
+#> coord. ref. : ETRF2000-PL / CS92 (EPSG:2180)
+#> source      : n1_map_eg.tif
+#> names       :  1,  2,  3,  4
+#> min values  :  1,  0,  0,  0
+#> max values  : 39, 20, 35, 31
 ```

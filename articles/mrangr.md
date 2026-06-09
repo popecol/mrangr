@@ -30,6 +30,7 @@ This vignette shows how to:
 The first step is to install and load the `mrangr` package.
 
 ``` r
+
 install.packages("mrangr")
 library(mrangr)
 ```
@@ -39,6 +40,7 @@ Since the maps on which the simulation takes place must be in the
 to make them easier to manipulate and visualise.
 
 ``` r
+
 install.packages("terra")
 library(terra)
 ```
@@ -52,6 +54,7 @@ well as carrying capacity maps for all species in the community
 find more information about these datasets in the help files:
 
 ``` r
+
 ?K_map_eg.tif
 ?n1_map_eg.tif
 ```
@@ -59,6 +62,7 @@ find more information about these datasets in the help files:
 Now, let’s load and plot these maps.
 
 ``` r
+
 # Carrying capacity
 K_map_eg <- rast(system.file("input_maps/K_map_eg.tif", package = "mrangr"))
 plot(K_map_eg, main = paste0("K_", names(K_map_eg)))
@@ -67,6 +71,7 @@ plot(K_map_eg, main = paste0("K_", names(K_map_eg)))
 ![](mrangr_files/figure-html/eg_maps_plot-1.png)
 
 ``` r
+
 
 # Initial abundance
 n1_map_eg <- rast(system.file("input_maps/n1_map_eg.tif", package = "mrangr"))
@@ -90,6 +95,7 @@ carrying capacity). Subsequent steps require the user to specify the
 simulation’s spatial extent and resolution.
 
 ``` r
+
 # define species number
 nspec <- 2
 # define map dimensions
@@ -113,6 +119,7 @@ however, any distribution can be used by specifying the appropriate
 quantile function.
 
 ``` r
+
 plot(K_map, main = paste0("K_", names(K_map)))
 ```
 
@@ -132,6 +139,7 @@ Here, we define a **symmetric competitive** interaction between two
 species:
 
 ``` r
+
 a <- matrix(c(NA, -0.8, -0.8, NA), nrow = nspec, ncol = nspec)
 print(a)
 #>      [,1] [,2]
@@ -147,6 +155,7 @@ function returns an object of the class `sim_com_data`, which contains
 all the necessary data for running a community simulation.
 
 ``` r
+
 first_com <- initialise_com(
   n1_map = round(K_map / 2), 
   K_map = K_map, 
@@ -178,6 +187,7 @@ We can now use `summary` to take a closer look at the `first_com`
 object.
 
 ``` r
+
 summary(first_com)
 #> Summary of sim_com_data object
 #> 
@@ -205,12 +215,14 @@ All you need to run a simulation is a `sim_com_data` object and the
 it for this example.
 
 ``` r
+
 first_sim <- sim_com(first_com, time = 100)
 ```
 
 Now, let’s examine the summary of the first simulation.
 
 ``` r
+
 summary(first_sim)
 #> Summary of sim_com_results object
 #> 
@@ -242,6 +254,7 @@ the [`plot()`](https://rspatial.github.io/terra/reference/plot.html)
 function.
 
 ``` r
+
 plot(first_sim, time = c(1, 10, 100))
 ```
 
@@ -261,6 +274,7 @@ We can also use the
 function to plot the mean species abundances over all time steps.
 
 ``` r
+
 plot_series(first_sim)
 legend("bottomright", title = "Species", legend = 1:nspec, 
        lty = 1:nspec, lwd = 2, col = 1:nspec)
@@ -279,6 +293,7 @@ the effects of sampling effort and detection probability into the
 analysis.
 
 ``` r
+
 ve <- virtual_ecologist(
   first_sim,
   type = "random_one_layer",
@@ -300,6 +315,7 @@ each time step. The `prop` argument controls the proportion of cells
 sampled. Let’s inspect the structure of the resulting `data.frame`.
 
 ``` r
+
 head(ve)
 #>     id      x      y species time n
 #> 1 6323 272500 636500       1    1 4
