@@ -24,7 +24,7 @@ load("inst/extdata/readme/first_sim.rda")
 [![CRAN release](https://www.r-pkg.org/badges/version/mrangr?color=green)](https://cran.r-project.org/package=mrangr) 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18641951.svg)](https://doi.org/10.5281/zenodo.18641951)
 [![Project Status: Active -- The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![R-CMD-check](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml) [![codecov](https://codecov.io/github/popecol/mrangr/graph/badge.svg?token=LF3PYFLBDN)](https://codecov.io/github/popecol/mrangr)
+[![R-CMD-check](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml) [![codecov](https://codecov.io/github/popecol/mrangr/graph/badge.svg?token=LF3PYFLBDN)](https://codecov.io/github/popecol/mrangr) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/popecol/mrangr)
 <!-- badges: end -->
 
 The **mrangr** package is designed to simulate metacommunities within a **spatially explicit, mechanistic framework**. It extends the functionality of the [`rangr`](https://github.com/ropensci/rangr) package by allowing for the simulation of **multiple interacting species** via an asymmetric interaction matrix.

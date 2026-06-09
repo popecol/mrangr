@@ -11,6 +11,8 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/github/popecol/mrangr/graph/badge.svg?token=LF3PYFLBDN)](https://codecov.io/github/popecol/mrangr)
+[![Ask
+DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/popecol/mrangr)
 <!-- badges: end -->
 
 The **mrangr** package is designed to simulate metacommunities within a
