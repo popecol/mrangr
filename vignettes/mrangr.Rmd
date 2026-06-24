@@ -31,16 +31,16 @@ K_map <- terra::rast("K_map.tif")
 
 # About `mrangr`
 
-This vignette demonstrates the main workflow of the `mrangr` package,
-which is designed to simulate metacommunities within a **spatially
-explicit, mechanistic framework**. The package builds upon the
-functionality of our earlier `rangr` package
-(<https://github.com/ropensci/rangr>), which focused on simulating
-single-species population dynamics with dispersal.
+This vignette shows the main workflow for `mrangr`, a package for simulating 
+metacommunities in a **spatially explicit, mechanistic framework**. 
+It builds on our previous `rangr` package (<https://github.com/ropensci/rangr>), 
+which focused only on single-species dynamics and dispersal.
 
-`mrangr` extends this by adding the ability to include **multiple
-interacting species** via an **asymmetric interaction matrix**, allowing
-for the flexible modelling of any type of biotic interaction.
+mrangr extends this framework by introducing multiple interacting species 
+through an **asymmetric interaction matrix**, allowing you to model any type of 
+biotic interaction. Additionally, the package integrates with the `terra` 
+ecosystem for GIS interoperability and includes a virtual ecologist module 
+to simulate imperfect detection and sampling errors.
 
 # Basic workflow
 
