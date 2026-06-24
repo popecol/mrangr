@@ -51,7 +51,7 @@ object with `n` layers, each representing a carrying capacity map.
 
 ``` r
 library(terra)
-#> terra 1.9.27
+#> terra 1.9.34
 library(FieldSimR)
 
 # Community parameters

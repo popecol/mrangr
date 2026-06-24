@@ -11,8 +11,8 @@
 <script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Mechanistic Metacommunity Simulator">
-<meta name="description" content="Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - rangr (see &lt;https://github.com/ropensci/rangr&gt;), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The mrangr package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.">
-<meta property="og:description" content="Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - rangr (see &lt;https://github.com/ropensci/rangr&gt;), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The mrangr package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.">
+<meta name="description" content="A forward simulator for generating synthetic metacommunity data. As an in silico experimental platform, it enables researchers to simulate community shifts, test theoretical frameworks, and benchmark analytical algorithms prior to empirical application. Key capabilities include mechanistic simulations driven by demography, dispersal, and interactions, GIS interoperability via the terra package for dynamic environments, and a virtual ecologist module that simulates imperfect detection and survey errors to mimic real-world biodiversity data.">
+<meta property="og:description" content="A forward simulator for generating synthetic metacommunity data. As an in silico experimental platform, it enables researchers to simulate community shifts, test theoretical frameworks, and benchmark analytical algorithms prior to empirical application. Key capabilities include mechanistic simulations driven by demography, dispersal, and interactions, GIS interoperability via the terra package for dynamic environments, and a virtual ecologist module that simulates imperfect detection and survey errors to mimic real-world biodiversity data.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -52,8 +52,17 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The <strong>mrangr</strong> package is designed to simulate metacommunities within a <strong>spatially explicit, mechanistic framework</strong>. It extends the functionality of the <a href="https://github.com/ropensci/rangr" class="external-link"><code>rangr</code></a> package by allowing for the simulation of <strong>multiple interacting species</strong> via an asymmetric interaction matrix.</p>
-<p>This tool mimics the essential processes shaping metacommunity dynamics: local population growth, dispersal, and interspecific interactions. Simulations take place in dynamic environments, facilitating projections of community shifts in response to environmental changes.</p>
+<!-- badges: end -->
+<p>This package is a forward simulator designed to generate synthetic metacommunity data. As an <em>in silico</em> experimental platform, it enables researchers to computationally generate hypothetical community shifts, test theoretical frameworks and benchmark analytical algorithms prior to empirical application.</p>
+<p>Core capabilities include:</p>
+<ul>
+<li>
+<strong>Mechanistic simulation</strong>: Generates spatially explicit community dynamics driven by local demography, dispersal, and interspecific interactions.</li>
+<li>
+<strong>GIS interoperability</strong>: Built on the <code>terra</code> ecosystem, the package reads and writes standard spatial formats (such as GeoTIFFs and ESRI grids), allowing simulations to run across dynamic environments.</li>
+<li>
+<strong>Virtual ecologist module</strong>: Bridges the gap between theory and empirical data by applying a hierarchical observation layer to the generated ground truth. Users can explicitly simulate imperfect detection and abundance estimation errors to mimic real-world biodiversity surveys.</li>
+</ul>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
