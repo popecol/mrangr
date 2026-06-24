@@ -1,5 +1,8 @@
 ---
 output: github_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r setup, include = FALSE}
@@ -29,9 +32,27 @@ load("inst/extdata/readme/first_sim.rda")
 
 <!-- badges: end -->
 
-The **mrangr** package is designed to simulate metacommunities within a **spatially explicit, mechanistic framework**. It extends the functionality of the `rangr` package by allowing for the simulation of **multiple interacting species** via an asymmetric interaction matrix.
 
-This tool mimics the essential processes shaping metacommunity dynamics: local population growth, dispersal, and interspecific interactions. Simulations take place in dynamic environments, facilitating projections of community shifts in response to environmental changes.
+This package is a forward simulator designed to generate synthetic
+metacommunity data. As an *in silico* experimental platform, it enables
+researchers to computationally generate hypothetical community shifts,
+test theoretical frameworks and benchmark analytical algorithms prior to
+empirical application.
+
+Core capabilities include:
+
+- **Mechanistic simulation**: Generates spatially explicit community
+  dynamics driven by local demography, dispersal, and interspecific
+  interactions.
+- **GIS interoperability**: Built on the `terra` ecosystem, the package
+  reads and writes standard spatial formats (such as GeoTIFFs and ESRI
+  grids), allowing simulations to run across dynamic environments.
+- **Virtual ecologist module**: Bridges the gap between theory and
+  empirical data by applying a hierarchical observation layer to the
+  generated ground truth. Users can explicitly simulate imperfect
+  detection and abundance estimation errors to mimic real-world
+  biodiversity surveys. 
+  
 
 ## Installation
 
@@ -45,11 +66,15 @@ or using the "Install" button in "Build" tab in RStudio.
 
 ## Basic Workflow
 
-The `mrangr` workflow involves initialising a community with spatial data and interaction parameters, running the simulation, and analysing the results.
+The `mrangr` workflow involves initialising a community with spatial
+data and interaction parameters, running the simulation, and analysing
+the results.
 
 ### 1. Input Maps and Interactions
 
-You must provide carrying capacity maps (`K_map`) and initial abundance maps (`n1_map`) as `SpatRaster` objects. For a community of $N$ species, the rasters must contain $N$ layers.
+You must provide carrying capacity maps (`K_map`) and initial abundance
+maps (`n1_map`) as `SpatRaster` objects. For a community of $N$ species,
+the rasters must contain $N$ layers.
 
 ```{r kmap}
 # Load example maps
@@ -57,8 +82,9 @@ K_map <- rast(system.file("input_maps/K_map_eg.tif", package = "mrangr"))
 K_map <- subset(K_map, 1:2)
 ```
 
-
-Interspecific interactions are defined using an **interaction matrix** ($a$), where values represent the per-capita interaction strength of the species in the column on the species in the row.
+Interspecific interactions are defined using an **interaction matrix**
+($a$), where values represent the per-capita interaction strength of the
+species in the column on the species in the row.
 
 ```{r inter}
 # Example for 2 species with symmetric competition
@@ -68,7 +94,9 @@ a <- matrix(c(NA, -0.8, -0.8, NA), nrow = nspec, ncol = nspec)
 
 ### 2. Community Initialisation
 
-Use `initialise_com()` to create a `sim_com_data` object. This stores all parameters, including the intrinsic growth rate ($r$) and the dispersal rate.
+Use `initialise_com()` to create a `sim_com_data` object. This stores
+all parameters, including the intrinsic growth rate ($r$) and the
+dispersal rate.
 
 ```{r init, eval=FALSE}
 first_com <- initialise_com(
@@ -82,7 +110,8 @@ first_com <- initialise_com(
 
 ### 3. Running the Simulation
 
-The `sim_com()` function executes the simulation over a specified number of time steps.
+The `sim_com()` function executes the simulation over a specified number
+of time steps.
 
 ```{r sim, eval=FALSE}
 first_sim <- sim_com(first_com, time = 100)
@@ -90,7 +119,8 @@ first_sim <- sim_com(first_com, time = 100)
 
 ### 4. Visualisation
 
-You can visualise the final spatial distributions or the change in mean abundance over time.
+You can visualise the final spatial distributions or the change in mean
+abundance over time.
 
 ```{r vis}
 # Visualise spatial niches at specific time steps
@@ -101,7 +131,10 @@ plot_series(first_sim)
 
 ## Virtual Ecologist
 
-The package includes a `virtual_ecologist()` function to simulate real-world observation processes. This allows users to sample the simulated community at defined points in space and time, incorporating sampling effort and detection probability into the simulation.
+The package includes a `virtual_ecologist()` function to simulate
+real-world observation processes. This allows users to sample the
+simulated community at defined points in space and time, incorporating
+sampling effort and detection probability into the simulation.
 
 ## Citation
 

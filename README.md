@@ -13,15 +13,25 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)
 
 <!-- badges: end -->
 
-The **mrangr** package is designed to simulate metacommunities within a
-**spatially explicit, mechanistic framework**. It extends the
-functionality of the `rangr` package by allowing for the simulation of
-**multiple interacting species** via an asymmetric interaction matrix.
+This package is a forward simulator designed to generate synthetic
+metacommunity data. As an *in silico* experimental platform, it enables
+researchers to computationally generate hypothetical community shifts,
+test theoretical frameworks and benchmark analytical algorithms prior to
+empirical application.
 
-This tool mimics the essential processes shaping metacommunity dynamics:
-local population growth, dispersal, and interspecific interactions.
-Simulations take place in dynamic environments, facilitating projections
-of community shifts in response to environmental changes.
+Core capabilities include:
+
+- **Mechanistic simulation**: Generates spatially explicit community
+  dynamics driven by local demography, dispersal, and interspecific
+  interactions.
+- **GIS interoperability**: Built on the `terra` ecosystem, the package
+  reads and writes standard spatial formats (such as GeoTIFFs and ESRI
+  grids), allowing simulations to run across dynamic environments.
+- **Virtual ecologist module**: Bridges the gap between theory and
+  empirical data by applying a hierarchical observation layer to the
+  generated ground truth. Users can explicitly simulate imperfect
+  detection and abundance estimation errors to mimic real-world
+  biodiversity surveys.
 
 ## Installation
 
