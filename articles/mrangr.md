@@ -8,7 +8,7 @@ framework**. It builds on our previous `rangr` package
 (<https://github.com/ropensci/rangr>), which focused only on
 single-species dynamics and dispersal.
 
-mrangr extends this framework by introducing multiple interacting
+`mrangr` extends this framework by introducing multiple interacting
 species through an **asymmetric interaction matrix**, allowing you to
 model any type of biotic interaction. Additionally, the package
 integrates with the `terra` ecosystem for GIS interoperability and
