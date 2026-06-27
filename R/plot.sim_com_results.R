@@ -14,7 +14,7 @@
 #' @param ... Further arguments passed to [`terra::plot`]
 #'
 #' @returns
-#' #' * If `length(time_points) == 1`, returns a `SpatRaster` with species as layers.
+#' * If `length(time_points) == 1`, returns a `SpatRaster` with species as layers.
 #' * If only one species is selected with multiple time points, returns a single `SpatRaster`.
 #'
 #' @export

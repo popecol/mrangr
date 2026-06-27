@@ -36,8 +36,8 @@ This data frame must contain three columns: \code{x}, \code{y} and \code{time}.}
 sample from the raster.}
 
 \item{obs_error}{character vector of length 1; type of the distribution
-that defines the observation process: "\code{\link[stats:Lognormal]{rlnorm}}"
-(log-normal distribution) or "\code{\link[stats:Binomial]{rbinom}}" (binomial distribution).}
+that defines the observation process: "\code{\link[stats:rlnorm]{rlnorm}}"
+(log-normal distribution) or "\code{\link[stats:rbinom]{rbinom}}" (binomial distribution).}
 
 \item{obs_error_param}{numeric vector of length 1; standard deviation
 (on a log scale) of the random noise in the observation process when
