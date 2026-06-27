@@ -5,4 +5,4 @@ to see their documentation.
 
 - rangr:
 
-  [`to_rast`](https://docs.ropensci.org/rangr/reference/to_rast.html)
+  [`to_rast()`](https://docs.ropensci.org/rangr/reference/to_rast.html)
