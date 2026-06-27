@@ -130,7 +130,10 @@ update.sim_com_data <- function(object, ..., evaluate = TRUE) {
 
     # unwrap maps if not updated
     if(!"K_map" %in% names(extras)) {
-      call$K_map <- unwrap(object$K_map)
+      if(is.list(object$K_map))
+        call$K_map  <- lapply(object$K_map, terra::unwrap)
+      else
+        call$K_map  <- unwrap(object$K_map)
     }
 
     if(!"n1_map" %in% names(extras)) {

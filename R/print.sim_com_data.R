@@ -32,7 +32,11 @@ print.sim_com_data <- function(x, ...) {
   cat("\n\nBorder types:\n  ", x$spec_data[[1]]$border, "\n")
 
   cat("\nK_map:\n")
-  print(unwrap(x$K_map))
+  if(is.list(x$K_map))
+    print(lapply(x$K_map, terra::unwrap))
+  else
+    print(unwrap(x$K_map))
+
   cat("\nn1_map:\n")
   print(unwrap(x$n1_map))
 
