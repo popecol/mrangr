@@ -208,7 +208,7 @@ sim_species <- function(i, obj, dK, N, K, t, a, dlist, id, e) {
     dK[, , j] <- a[i, j] * N[, , t - 1, j]
   }
 
-  sum_dK <- apply(dK, 1:2, sum, na.rm = TRUE)
+  sum_dK <- rowSums(dK, dims = 2, na.rm = TRUE)
 
   # Calculate effective carrying capacity for time 't' by modifying the pre-filled baseline K
   K[, , t, i] <- pmax(K[, , t, i] + sum_dK, 0)
