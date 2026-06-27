@@ -1,8 +1,8 @@
-
 #' Simulate Community Dynamics Over Time
 #'
 #' This function simulates species interactions and population dynamics over a given period.
-#' It accounts for species invasions and updates population abundances at each time step.
+#' It accounts for species invasions and updates population abundances at each time step,
+#' while natively supporting both static and time-dynamic (changing) carrying capacities.
 #'
 #' @param obj An object of class `sim_com_data`, as returned by [`initialise_com()`].
 #' @param time Integer. Total number of simulation steps. Must be >= 2.
@@ -15,7 +15,6 @@
 #'   \item{sim_time}{Integer. Duration of the output simulation (excluding burn-in).}
 #'   \item{id}{A [`SpatRaster`][terra::SpatRaster-class] object used as a geographic template.}
 #'   \item{N_map}{4D array \[rows, cols, time, species\] of population abundances.}
-
 #' }
 #'
 #' @export
@@ -66,7 +65,7 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
     propagule_size <- invasion$propagule_size
   }
 
-  id <- unwrap(obj$spec_data[[1]]$id) # Grid cell identifiers as a raster
+  id <- terra::unwrap(obj$spec_data[[1]]$id) # Grid cell identifiers as a raster
   nrows <- nrow(id)
   ncols <- ncol(id)
 
@@ -75,11 +74,49 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
   K <- array(0, dim = dim)
   dK <- array(0, dim = dim[-3])  # [nrows, ncols, nspec]
 
-  K_map <- unwrap(obj$K_map)
-  n1_map <- unwrap(obj$n1_map)
+  # Unwrap K_map and handle both static (single SpatRaster) and dynamic (list of SpatRasters)
+  K_map_raw <- obj$K_map
+  if (is.list(K_map_raw)) {
+    K_map_unwrapped <- lapply(K_map_raw, terra::unwrap)
+    is_dynamic_K <- TRUE
+  } else {
+    K_map_unwrapped <- terra::unwrap(K_map_raw)
+    is_dynamic_K <- FALSE
+  }
 
-  K[, , 1, ] <- as.array(K_map)
+  n1_map <- terra::unwrap(obj$n1_map)
   N[, , 1, ] <- as.array(n1_map)
+
+  # Pre-fill baseline K for all time steps
+  if (is_dynamic_K) {
+
+    # Assess if simulation time exceeds provided time layers
+    # We check the maximum number of layers across all species' K_map
+    max_layers <- max(vapply(K_map_unwrapped,
+                             function(x) dim(as.array(x))[3], numeric(1)))
+
+    if (time > max_layers) {
+      warning(sprintf(
+        "Simulation time (%d) exceeds the number of available time layers in K_map (%d). The last available layer will be recycled for the remaining time steps.",
+        time, max_layers
+      ), call. = FALSE)
+    }
+
+    for (i in seq(nspec)) {
+      arr <- as.array(K_map_unwrapped[[i]])
+      n_layers <- dim(arr)[3]
+      for (t_step in seq(time)) {
+        # Use the corresponding time layer, or recycle the last one if t_step > n_layers
+        layer_idx <- min(t_step, n_layers)
+        K[, , t_step, i] <- arr[, , layer_idx]
+      }
+    }
+  } else {
+    arr <- as.array(K_map_unwrapped)
+    for (t_step in seq(time)) {
+      K[, , t_step, ] <- arr
+    }
+  }
 
   dlist <- obj$dlist
 
@@ -112,7 +149,6 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
       FUN.VALUE = matrix(0, nrows, ncols)
     )
 
-
     # Check extinction status
     extinction_status <- get_extinction_status(N, t, nspec)
     if (all(extinction_status)) {
@@ -126,7 +162,7 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
 
   # Prepare list with extinction status, simulated time and abundances
   out <- list(
-    extinction = setNames(extinction_status, obj$spec_names),
+    extinction = stats::setNames(extinction_status, obj$spec_names),
     spec_names = obj$spec_names,
     sim_time = t - burn,
     id = obj[["spec_data"]][[1]][["id"]],
@@ -137,7 +173,6 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
 
   return(out)
 }
-
 
 
 #' Simulate a Single Species for One Time Step
@@ -174,7 +209,9 @@ sim_species <- function(i, obj, dK, N, K, t, a, dlist, id, e) {
   }
 
   sum_dK <- apply(dK, 1:2, sum, na.rm = TRUE)
-  K[, , t, i] <- pmax(K[, , 1, i] + sum_dK, 0)
+
+  # Calculate effective carrying capacity for time 't' by modifying the pre-filled baseline K
+  K[, , t, i] <- pmax(K[, , t, i] + sum_dK, 0)
 
   n1_m <- terra::setValues(terra::rast(id), N[, , t - 1, i])
   K_m <- terra::setValues(terra::rast(id), K[, , t, i])
