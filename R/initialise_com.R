@@ -7,7 +7,7 @@
 #'
 #' @param n1_map A [`SpatRaster`][terra::SpatRaster-class] with one layer per species representing the initial abundance.  If `NULL` (default), random initial values will be generated
 #'   from a Poisson distribution using `K_map`.
-#' @param K_map A [`SpatRaster`][terra::SpatRaster-class] with one layer per species representing carrying capacities, OR a list of `SpatRaster` objects where each element corresponds to a species and contains multiple layers representing changing carrying capacities over time.
+#' @param K_map A [`SpatRaster`][terra::SpatRaster-class] with one layer per species representing carrying capacities or a list of [`SpatRaster`][terra::SpatRaster-class] objects where each element corresponds to a species and contains multiple layers representing changing carrying capacities over time steps.
 #' @param r A numeric vector of intrinsic growth rates. It can be a single-element vector (if all species have the same intrinsic growth rate) or a vector of length equal to the number of species in the community.
 #' @param a A square numeric matrix representing interaction coefficients between species. Each element `a_ij` is the per-capita interaction strength of species `j` on species `i`. It expresses the change in carrying capacity of species `i` by a single individual of species `j`. The diagonal must be `NA` and the matrix must be a square matrix of order equal to the number of species. It does not have to be symmetric.
 #' @param dlist Optional. A list; target cells at a specified distance calculated

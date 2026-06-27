@@ -19,7 +19,7 @@ initialise_com(
 \item{n1_map}{A \code{\link[terra:SpatRaster-class]{SpatRaster}} with one layer per species representing the initial abundance.  If \code{NULL} (default), random initial values will be generated
 from a Poisson distribution using \code{K_map}.}
 
-\item{K_map}{A \code{\link[terra:SpatRaster-class]{SpatRaster}} with one layer per species representing carrying capacities, OR a list of \code{SpatRaster} objects where each element corresponds to a species and contains multiple layers representing changing carrying capacities over time.}
+\item{K_map}{A \code{\link[terra:SpatRaster-class]{SpatRaster}} with one layer per species representing carrying capacities or a list of \code{\link[terra:SpatRaster-class]{SpatRaster}} objects where each element corresponds to a species and contains multiple layers representing changing carrying capacities over time steps.}
 
 \item{r}{A numeric vector of intrinsic growth rates. It can be a single-element vector (if all species have the same intrinsic growth rate) or a vector of length equal to the number of species in the community.}
 
