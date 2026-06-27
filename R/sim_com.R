@@ -246,9 +246,7 @@ get_extinction_status <- function(N, t, nspec) {
     vapply(
       seq(nspec),
       function(i)
-        ifelse(sum(N[, , t, i], na.rm = TRUE) == 0,
-               TRUE,
-               FALSE),
+        sum(N[, , t, i], na.rm = TRUE) == 0,
       FUN.VALUE = logical(1))
 
   return(extinction_status)
