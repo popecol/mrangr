@@ -48,13 +48,11 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
     K_map_unwrapped <- lapply(K_map_raw, terra::unwrap)
     is_dynamic_K <- TRUE
 
-    # Obliczamy liczbę warstw (map) dla KAŻDEGO gatunku
     layers_per_spec <- vapply(K_map_unwrapped, function(x) dim(as.array(x))[3], numeric(1))
 
     # Assess if simulation time exceeds provided time layers
     if (any(time > layers_per_spec)) {
 
-      # Tworzymy ciąg tekstowy z liczbą map per gatunek, np. "10, 10, 5"
       layers_str <- paste(layers_per_spec, collapse = ", ")
 
       stop(sprintf(
@@ -131,7 +129,6 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
 
     if (is_dynamic_K) {
       for (i in seq(nspec)) {
-        # Pobieramy konkretną warstwę czasową 't' dla gatunku 'i'
         base_K[, , i] <- base_K_list[[i]][, , t]
       }
     }

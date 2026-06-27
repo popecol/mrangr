@@ -191,8 +191,6 @@ initialise_com <-
     # Initialise each species ----------------------------------------------
 
     spec_data <- lapply(seq_len(nspec), function(i) {
-      # If K_map is a list, [[i]] gives the SpatRaster (time series) for species i.
-      # If it's a single SpatRaster, [[i]] gives the 1st layer for species i.
       do.call(rangr::initialise,
               c(list(n1_map = n1_map[[i]], K_map = K_map[[i]], calculate_dist = FALSE),
                 init_params[[i]]))
