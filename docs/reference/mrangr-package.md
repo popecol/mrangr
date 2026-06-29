@@ -1,28 +1,31 @@
 # mrangr: Mechanistic Metacommunity Simulator
 
-Flexible, mechanistic, and spatially explicit simulator of
-metacommunities. It extends the 'rangr' package, which implemented a
-mechanistic virtual species simulator integrating population dynamics
-and dispersal. The 'mrangr' package adds the ability to simulate
-multiple species interacting through an asymmetric matrix of pairwise
-relationships, allowing users to model all types of biotic interactions
-— competitive, facilitative, or neutral — within spatially explicit
-virtual environments.
+A forward simulator for generating synthetic metacommunity data. As an
+in silico experimental platform, it enables researchers to simulate
+community shifts, test theoretical frameworks, and benchmark analytical
+algorithms prior to empirical application. Key capabilities include
+mechanistic simulations driven by demography, dispersal, and
+interactions, GIS interoperability via the 'terra' package for dynamic
+environments, and a virtual ecologist module that simulates imperfect
+detection and survey errors to mimic real-world biodiversity data.
 
 ## See also
 
 Useful links:
 
-- [XXXX](XXXX)
+- XXXX
 
 - Report bugs at [XXXX](XXXX)
 
 ## Author
 
-**Maintainer**: Author1name Author1surname <Author1@anonimisedemail.com>
+**Maintainer**: Author1name Author1surname <Author1@anonymisedemail.com>
 \[copyright holder\]
 
 Authors:
 
-- Author2name Author2surname <Author2@anonimisedemail2.com> \[copyright
+- Author1name Author1surname <Author1@anonymisedemail.com> \[copyright
+  holder\]
+
+- Author2name Author2surname <Author2@anonymisedemail2.com> \[copyright
   holder\]

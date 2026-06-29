@@ -66,26 +66,26 @@ crs(id) <- "epsg:2180"
 cor_mat <- FieldSimR::rand_cor_mat(nspec, -0.5, 0.5, pos.def = TRUE)
 #> 'cor_mat' is already positive (semi)-definite, matrix was not altered
 cor_mat
-#>            1         2             3            4
-#> 1  1.0000000 0.3916460 -0.2157692814 0.2158205970
-#> 2  0.3916460 1.0000000  0.1954567640 0.2116401899
-#> 3 -0.2157693 0.1954568  1.0000000000 0.0009836659
-#> 4  0.2158206 0.2116402  0.0009836659 1.0000000000
+#>             1           2          3          4
+#> 1  1.00000000 -0.46784586 0.33996773 0.05823598
+#> 2 -0.46784586  1.00000000 0.03455013 0.39482726
+#> 3  0.33996773  0.03455013 1.00000000 0.34111883
+#> 4  0.05823598  0.39482726 0.34111883 1.00000000
 
 # Generate and define the distributions and parameters
 # of correlated carrying capacity maps
 K_map <- K_sim(nspec, id, range = 20000, cor_mat = cor_mat, qfun = qlnorm,
                meanlog = 2, sdlog = 0.5)
 K_map
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 10, 10, 4  (nrow, ncol, nlyr)
 #> resolution  : 1000, 1000  (x, y)
-#> extent      : 250000, 260000, 6e+05, 610000  (xmin, xmax, ymin, ymax)
-#> coord. ref. : ETRF2000-PL / CS92 (EPSG:2180) 
+#> extent      : 250000, 260000, 600000, 610000  (xmin, xmax, ymin, ymax)
+#> coord. ref. : ETRF2000-PL / CS92 (EPSG:2180)
 #> source(s)   : memory
-#> names       :        1,         2,         3,         4 
-#> min values  :  2.26365,  2.834283,  2.632185,  2.416798 
-#> max values  : 36.38108, 30.058541, 19.374650, 22.407833 
+#> names       :         1,         2,         3,         4
+#> min values  :  2.272714,  1.702707,  1.854232,  2.107359
+#> max values  : 26.548617, 22.608242, 18.601883, 30.741726
 hist(K_map)
 
 plot(K_map)

@@ -50,6 +50,7 @@ to_rast(
 ## Examples
 
 ``` r
+
 # Read simulation data from the mrangr package
 simulated_com <- get_simulated_com()
 

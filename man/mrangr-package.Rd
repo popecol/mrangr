@@ -11,17 +11,18 @@ A forward simulator for generating synthetic metacommunity data. As an in silico
 \seealso{
 Useful links:
 \itemize{
-  \item \url{XXXX}
+  \item XXXX
   \item Report bugs at \url{XXXX}
 }
 
 }
 \author{
-\strong{Maintainer}: Author1name Author1surname \email{Author1@anonimisedemail.com} [copyright holder]
+\strong{Maintainer}: Author1name Author1surname \email{Author1@anonymisedemail.com} [copyright holder]
 
 Authors:
 \itemize{
-  \item Author2name Author2surname \email{Author2@anonimisedemail2.com} [copyright holder]
+  \item Author1name Author1surname \email{Author1@anonymisedemail.com} [copyright holder]
+  \item Author2name Author2surname \email{Author2@anonymisedemail2.com} [copyright holder]
 }
 
 }

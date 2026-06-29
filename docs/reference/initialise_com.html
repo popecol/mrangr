@@ -11,7 +11,7 @@ by organising inputs for multiple species and their interactions."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">mrangr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@ from a Poisson distribution using <code>K_map</code>.</p></dd>
 
 
 <dt id="arg-k-map">K_map<a class="anchor" aria-label="anchor" href="#arg-k-map"></a></dt>
-<dd><p>A <code><a href="https://rspatial.github.io/terra/reference/SpatRaster-class.html" class="external-link">SpatRaster</a></code> with one layer per species representing carrying capacities.</p></dd>
+<dd><p>A <code><a href="https://rspatial.github.io/terra/reference/SpatRaster-class.html" class="external-link">SpatRaster</a></code> with one layer per species representing carrying capacities or a list of <code><a href="https://rspatial.github.io/terra/reference/SpatRaster-class.html" class="external-link">SpatRaster</a></code> objects where each element corresponds to a species and contains multiple layers representing changing carrying capacities over time steps.</p></dd>
 
 
 <dt id="arg-r">r<a class="anchor" aria-label="anchor" href="#arg-r"></a></dt>
@@ -130,7 +130,7 @@ species' kernel function. Must be the same length as number of species.</p></dd>
 <dd><p>Initial abundance maps (wrapped <code>SpatRaster</code>).</p></dd>
 
 <dt>K_map</dt>
-<dd><p>Carrying capacity maps (wrapped <code>SpatRaster</code>).</p></dd>
+<dd><p>Carrying capacity maps (wrapped <code>SpatRaster</code> or a list of wrapped <code>SpatRaster</code>s).</p></dd>
 
 <dt>max_dist</dt>
 <dd><p>The maximum dispersal distance across all species.</p></dd>

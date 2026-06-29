@@ -2,7 +2,8 @@
 
 This function simulates species interactions and population dynamics
 over a given period. It accounts for species invasions and updates
-population abundances at each time step.
+population abundances at each time step, while natively supporting both
+static and time-dynamic (changing) carrying capacities.
 
 ## Usage
 

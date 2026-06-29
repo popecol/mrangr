@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">mrangr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,26 +93,26 @@
 <span class="r-in"><span><span class="va">cor_mat</span> <span class="op">&lt;-</span> <span class="fu">FieldSimR</span><span class="fu">::</span><span class="fu"><a href="https://crwerner.github.io/fieldsimr/reference/rand_cor_mat.html" class="external-link">rand_cor_mat</a></span><span class="op">(</span><span class="va">nspec</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, pos.def <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> 'cor_mat' is already positive (semi)-definite, matrix was not altered</span>
 <span class="r-in"><span><span class="va">cor_mat</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            1         2             3            4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1.0000000 0.3916460 -0.2157692814 0.2158205970</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.3916460 1.0000000  0.1954567640 0.2116401899</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 -0.2157693 0.1954568  1.0000000000 0.0009836659</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.2158206 0.2116402  0.0009836659 1.0000000000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             1           2          3          4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1.00000000 -0.46784586 0.33996773 0.05823598</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 -0.46784586  1.00000000 0.03455013 0.39482726</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.33996773  0.03455013 1.00000000 0.34111883</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.05823598  0.39482726 0.34111883 1.00000000</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Generate and define the distributions and parameters</span></span></span>
 <span class="r-in"><span><span class="co"># of correlated carrying capacity maps</span></span></span>
 <span class="r-in"><span><span class="va">K_map</span> <span class="op">&lt;-</span> <span class="fu">K_sim</span><span class="op">(</span><span class="va">nspec</span>, <span class="va">id</span>, range <span class="op">=</span> <span class="fl">20000</span>, cor_mat <span class="op">=</span> <span class="va">cor_mat</span>, qfun <span class="op">=</span> <span class="va">qlnorm</span>,</span></span>
 <span class="r-in"><span>               meanlog <span class="op">=</span> <span class="fl">2</span>, sdlog <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">K_map</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> size        : 10, 10, 4  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 1000, 1000  (x, y)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 250000, 260000, 6e+05, 610000  (xmin, xmax, ymin, ymax)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : ETRF2000-PL / CS92 (EPSG:2180) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 250000, 260000, 600000, 610000  (xmin, xmax, ymin, ymax)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : ETRF2000-PL / CS92 (EPSG:2180)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> source(s)   : memory</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> names       :        1,         2,         3,         4 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :  2.26365,  2.834283,  2.632185,  2.416798 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max values  : 36.38108, 30.058541, 19.374650, 22.407833 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names       :         1,         2,         3,         4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :  2.272714,  1.702707,  1.854232,  2.107359</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max values  : 26.548617, 22.608242, 18.601883, 30.741726</span>
 <span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/hist.html" class="external-link">hist</a></span><span class="op">(</span><span class="va">K_map</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="K_sim-1.png" alt="" width="480" height="576"></span>
 <span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">K_map</span><span class="op">)</span></span></span>

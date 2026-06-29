@@ -6,21 +6,32 @@ Status: Active – The project has reached a stable, usable state and is
 being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)![R-CMD-check](https://img.shields.io/badge/R_CMD_check_anonymised-passing-brightgreen?logo=github)![codecov](https://img.shields.io/badge/codecov_anonymised-98%25-brightgreen?logo=codecov)
 
-The **mrangr** package is designed to simulate metacommunities within a
-**spatially explicit, mechanistic framework**. It extends the
-functionality of the `rangr` package by allowing for the simulation of
-**multiple interacting species** via an asymmetric interaction matrix.
+This package is a forward simulator designed to generate synthetic
+metacommunity data. As an *in silico* experimental platform, it enables
+researchers to computationally generate hypothetical community shifts,
+test theoretical frameworks and benchmark analytical algorithms prior to
+empirical application.
 
-This tool mimics the essential processes shaping metacommunity dynamics:
-local population growth, dispersal, and interspecific interactions.
-Simulations take place in dynamic environments, facilitating projections
-of community shifts in response to environmental changes.
+Core capabilities include:
+
+- **Mechanistic simulation**: Generates spatially explicit community
+  dynamics driven by local demography, dispersal, and interspecific
+  interactions.
+- **GIS interoperability**: Built on the `terra` ecosystem, the package
+  reads and writes standard spatial formats (such as GeoTIFFs and ESRI
+  grids), allowing simulations to run across dynamic environments.
+- **Virtual ecologist module**: Bridges the gap between theory and
+  empirical data by applying a hierarchical observation layer to the
+  generated ground truth. Users can explicitly simulate imperfect
+  detection and abundance estimation errors to mimic real-world
+  biodiversity surveys.
 
 ## Installation
 
 You can install **mrangr** with:
 
 ``` r
+
 devtools::install()
 ```
 
@@ -39,6 +50,7 @@ maps (`n1_map`) as `SpatRaster` objects. For a community of $`N`$
 species, the rasters must contain $`N`$ layers.
 
 ``` r
+
 # Load example maps
 K_map <- rast(system.file("input_maps/K_map_eg.tif", package = "mrangr"))
 K_map <- subset(K_map, 1:2)
@@ -49,6 +61,7 @@ Interspecific interactions are defined using an **interaction matrix**
 the species in the column on the species in the row.
 
 ``` r
+
 # Example for 2 species with symmetric competition
 nspec <- 2
 a <- matrix(c(NA, -0.8, -0.8, NA), nrow = nspec, ncol = nspec)
@@ -61,6 +74,7 @@ Use [`initialise_com()`](reference/initialise_com.md) to create a
 intrinsic growth rate ($`r`$) and the dispersal rate.
 
 ``` r
+
 first_com <- initialise_com(
   n1_map = round(K_map / 2), 
   K_map = K_map, 
@@ -76,6 +90,7 @@ The [`sim_com()`](reference/sim_com.md) function executes the simulation
 over a specified number of time steps.
 
 ``` r
+
 first_sim <- sim_com(first_com, time = 100)
 ```
 
@@ -85,6 +100,7 @@ You can visualise the final spatial distributions or the change in mean
 abundance over time.
 
 ``` r
+
 # Visualise spatial niches at specific time steps
 plot(first_sim, time = c(1, 10, 100))
 ```
@@ -92,6 +108,7 @@ plot(first_sim, time = c(1, 10, 100))
 ![](reference/figures/README-vis-1.png)
 
 ``` r
+
 # Plot abundance time series for all species
 plot_series(first_sim)
 ```
@@ -113,6 +130,7 @@ To cite **mrangr**, please use the
 [`citation()`](https://rdrr.io/r/utils/citation.html) function:
 
 ``` r
+
 library(mrangr)
 citation("mrangr")
 ```

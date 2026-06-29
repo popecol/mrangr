@@ -23,7 +23,7 @@ The diagonal distance in meteres.
 
 ``` r
 library(terra)
-#> terra 1.8.93
+#> terra 1.9.27
 
 # Read data from the mrangr package
 K_map <- rast(system.file("input_maps/K_map_eg.tif", package = "mrangr"))
