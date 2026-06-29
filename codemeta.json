@@ -2,19 +2,19 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "mrangr",
-  "description": "Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends our previous package - 'rangr' (see <https://github.com/ropensci/rangr>), which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.",
+  "description": "A forward simulator for generating synthetic metacommunity data. As an in silico experimental platform, it enables researchers to simulate community shifts, test theoretical frameworks, and benchmark analytical algorithms prior to empirical application. Key capabilities include mechanistic simulations driven by demography, dispersal, and interactions, GIS interoperability via the 'terra' package for dynamic environments, and a virtual ecologist module that simulates imperfect detection and survey errors to mimic real-world biodiversity data.",
   "name": "mrangr: Mechanistic Metacommunity Simulator",
   "relatedLink": ["https://popecol.github.io/mrangr/", "https://cran.r-project.org/web/packages/mrangr/index.html", "https://CRAN.R-project.org/package=mrangr"],
   "codeRepository": "https://github.com/popecol/mrangr",
   "issueTracker": "https://github.com/popecol/mrangr/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.3.0 (2023-04-21 ucrt)",
+  "runtimePlatform": "R version 4.6.0 (2026-04-24 ucrt)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -174,7 +174,14 @@
     "8": {
       "@type": "SoftwareApplication",
       "identifier": "mgcv",
-      "name": "mgcv"
+      "name": "mgcv",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=mgcv"
     },
     "9": {
       "@type": "SoftwareApplication",
@@ -229,7 +236,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "10457.1KB",
+  "fileSize": "10884.463KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -247,11 +254,10 @@
         }
       ],
       "name": "mrangr: Mechanistic Metacommunity Simulator",
-      "description": "R package version 1.0.1"
+      "description": "R package version 1.0.2"
     }
   ],
-  "releaseNotes": "https://github.com/popecol/mrangr/blob/master/NEWS.md",
-  "readme": "https://github.com/popecol/mrangr/blob/main/README.md",
-  "contIntegration": "https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml",
+  "releaseNotes": "https://github.com/popecol/mrangr/blob/main/NEWS.md",
+  "contIntegration": ["https://github.com/popecol/mrangr/actions/workflows/R-CMD-check.yaml", "https://codecov.io/github/popecol/mrangr"],
   "developmentStatus": "https://www.repostatus.org/#active"
 }

@@ -1,6 +1,6 @@
 Package: mrangr
 Title: Mechanistic Metacommunity Simulator
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: c(
     person("Katarzyna", "Markowska", , "katarzyna.markowska@amu.edu.pl", role = c("aut", "cre", "cph")),
     person("Lechosław", "Kuczyński", , "lechu@amu.edu.pl", role = c("aut", "cph"))
