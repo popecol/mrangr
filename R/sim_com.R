@@ -42,38 +42,6 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
     time >= 2,
     msg = "'time' must be a positive integer >= 2.")
 
-  # Unwrap K_map and extract to base R arrays
-  K_map_raw <- obj$K_map
-  if (is.list(K_map_raw)) {
-    K_map_unwrapped <- lapply(K_map_raw, terra::unwrap)
-    is_dynamic_K <- TRUE
-
-    layers_per_spec <- vapply(K_map_unwrapped, function(x) dim(as.array(x))[3], numeric(1))
-
-    # Assess if simulation time exceeds provided time layers
-    if (any(time > layers_per_spec)) {
-
-      layers_str <- paste(layers_per_spec, collapse = ", ")
-
-      stop(sprintf(
-        "Simulation time (%d) exceeds the number of available time layers in K_map. Available layers per species: [%s].",
-        time, layers_str
-      ), call. = FALSE)
-    }
-
-    # List of 3D arrays [nrows, ncols, time_layers]
-    base_K_list <- lapply(K_map_unwrapped, as.array)
-    base_K <- array(0, dim = c(nrows, ncols, nspec))
-
-  } else {
-    K_map_unwrapped <- terra::unwrap(K_map_raw)
-    is_dynamic_K <- FALSE
-
-    # Single 3D array [nrows, ncols, nspec]
-    base_K <- as.array(K_map_unwrapped)
-  }
-
-
   assert_that(
     is.count(burn) || burn == 0,
     burn < time,
@@ -98,8 +66,39 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
   id <- terra::unwrap(obj$spec_data[[1]]$id) # Grid cell identifiers as a raster
   nrows <- nrow(id)
   ncols <- ncol(id)
-
   dim <- c(nrows, ncols, time, nspec)
+
+  # Unwrap K_map and extract to base R arrays
+  K_map_raw <- obj$K_map
+  if (is.list(K_map_raw)) {
+    K_map_unwrapped <- lapply(K_map_raw, terra::unwrap)
+    is_dynamic_K <- TRUE
+
+    layers_per_spec <- vapply(K_map_unwrapped, function(x) dim(as.array(x))[3], numeric(1))
+
+    # Assess if simulation time exceeds provided time layers
+    if (any(time > layers_per_spec)) {
+
+      layers_str <- paste(layers_per_spec, collapse = ", ")
+
+      stop(sprintf(
+        "Simulation time (%d) exceeds the number of available time layers in K_map. Available layers per species: [%s].",
+        time, layers_str
+      ), call. = FALSE)
+    }
+
+    # List of 3D arrays [nrows, ncols, time_layers]
+    base_K_list <- lapply(K_map_unwrapped, as.array)
+    base_K <- array(0, dim = dim[-3])
+
+  } else {
+    K_map_unwrapped <- terra::unwrap(K_map_raw)
+    is_dynamic_K <- FALSE
+
+    # Single 3D array [nrows, ncols, nspec]
+    base_K <- as.array(K_map_unwrapped)
+  }
+
   N <- array(0L, dim = dim)
   dK <- array(0, dim = dim[-3])  # [nrows, ncols, nspec]
 
