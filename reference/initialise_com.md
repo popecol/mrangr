@@ -34,7 +34,12 @@ initialise_com(
 
   A
   [`SpatRaster`](https://rspatial.github.io/terra/reference/SpatRaster-class.html)
-  with one layer per species representing carrying capacities.
+  with one layer per species representing carrying capacities or a list
+  of
+  [`SpatRaster`](https://rspatial.github.io/terra/reference/SpatRaster-class.html)
+  objects where each element corresponds to a species and contains
+  multiple layers representing changing carrying capacities over time
+  steps.
 
 - r:
 
@@ -120,7 +125,8 @@ A list of class `sim_com_data` containing:
 
 - K_map:
 
-  Carrying capacity maps (wrapped `SpatRaster`).
+  Carrying capacity maps (wrapped `SpatRaster` or a list of wrapped
+  `SpatRaster`s).
 
 - max_dist:
 
