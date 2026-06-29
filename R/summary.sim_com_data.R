@@ -111,8 +111,11 @@ print.summary.sim_com_data <- function(x, ...) {
 # internal functions -----------------------------------------------------------
 
 summarise_species_maps <- function(wrapped_maps, spec_names) {
-  maps <- unwrap(wrapped_maps)
-  n <- nlyr(maps)
+  if(is.list(wrapped_maps))
+    maps <- lapply(wrapped_maps, terra::unwrap)
+  else
+    maps <- unwrap(wrapped_maps)
+  n <- length(spec_names)
 
   summary_df <- data.frame(
     species = spec_names,

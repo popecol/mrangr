@@ -1,8 +1,8 @@
-
 #' Simulate Community Dynamics Over Time
 #'
 #' This function simulates species interactions and population dynamics over a given period.
-#' It accounts for species invasions and updates population abundances at each time step.
+#' It accounts for species invasions and updates population abundances at each time step,
+#' while natively supporting both static and time-dynamic (changing) carrying capacities.
 #'
 #' @param obj An object of class `sim_com_data`, as returned by [`initialise_com()`].
 #' @param time Integer. Total number of simulation steps. Must be >= 2.
@@ -15,7 +15,6 @@
 #'   \item{sim_time}{Integer. Duration of the output simulation (excluding burn-in).}
 #'   \item{id}{A [`SpatRaster`][terra::SpatRaster-class] object used as a geographic template.}
 #'   \item{N_map}{4D array \[rows, cols, time, species\] of population abundances.}
-
 #' }
 #'
 #' @export
@@ -58,31 +57,54 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
   a <- obj$a
 
   if (!is.null(invasion)) {
-
     inv_check(invasion)
-
     invaders <- invasion$invaders
     inv_time <- invasion$invasion_times
     propagule_size <- invasion$propagule_size
   }
 
-  id <- unwrap(obj$spec_data[[1]]$id) # Grid cell identifiers as a raster
+  id <- terra::unwrap(obj$spec_data[[1]]$id) # Grid cell identifiers as a raster
   nrows <- nrow(id)
   ncols <- ncol(id)
-
   dim <- c(nrows, ncols, time, nspec)
+
+  # Unwrap K_map and extract to base R arrays
+  K_map_raw <- obj$K_map
+  if (is.list(K_map_raw)) {
+    K_map_unwrapped <- lapply(K_map_raw, terra::unwrap)
+    is_dynamic_K <- TRUE
+
+    layers_per_spec <- vapply(K_map_unwrapped, function(x) dim(as.array(x))[3], numeric(1))
+
+    # Assess if simulation time exceeds provided time layers
+    if (any(time > layers_per_spec)) {
+
+      layers_str <- paste(layers_per_spec, collapse = ", ")
+
+      stop(sprintf(
+        "Simulation time (%d) exceeds the number of available time layers in K_map. Available layers per species: [%s].",
+        time, layers_str
+      ), call. = FALSE)
+    }
+
+    # List of 3D arrays [nrows, ncols, time_layers]
+    base_K_list <- lapply(K_map_unwrapped, as.array)
+    base_K <- array(0, dim = dim[-3])
+
+  } else {
+    K_map_unwrapped <- terra::unwrap(K_map_raw)
+    is_dynamic_K <- FALSE
+
+    # Single 3D array [nrows, ncols, nspec]
+    base_K <- as.array(K_map_unwrapped)
+  }
+
   N <- array(0L, dim = dim)
-  K <- array(0, dim = dim)
   dK <- array(0, dim = dim[-3])  # [nrows, ncols, nspec]
 
-  K_map <- unwrap(obj$K_map)
-  n1_map <- unwrap(obj$n1_map)
-
-  K[, , 1, ] <- as.array(K_map)
+  n1_map <- terra::unwrap(obj$n1_map)
   N[, , 1, ] <- as.array(n1_map)
-
   dlist <- obj$dlist
-
 
   # Initialize progress bar
   if (progress_bar) {
@@ -104,14 +126,31 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
       }
     }
 
+    if (is_dynamic_K) {
+      for (i in seq(nspec)) {
+        base_K[, , i] <- base_K_list[[i]][, , t]
+      }
+    }
+
     # Simulate species for time t
     N[, , t, ] <- vapply(
       seq(nspec),
-      sim_species, obj = obj, dK = dK, N = N, K = K, t = t,
-      a = a, dlist = dlist, id = id, e = extinction_status,
+      function(i) {
+        sim_species(
+          i = i,
+          obj = obj,
+          dK = dK,
+          N = N,
+          K = base_K[, , i],
+          t = t,
+          a = a,
+          dlist = dlist,
+          id = id,
+          e = extinction_status
+        )
+      },
       FUN.VALUE = matrix(0, nrows, ncols)
     )
-
 
     # Check extinction status
     extinction_status <- get_extinction_status(N, t, nspec)
@@ -126,7 +165,7 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
 
   # Prepare list with extinction status, simulated time and abundances
   out <- list(
-    extinction = setNames(extinction_status, obj$spec_names),
+    extinction = stats::setNames(extinction_status, obj$spec_names),
     spec_names = obj$spec_names,
     sim_time = t - burn,
     id = obj[["spec_data"]][[1]][["id"]],
@@ -139,17 +178,13 @@ sim_com <- function(obj, time, burn = 0, progress_bar = FALSE) {
 }
 
 
-
 #' Simulate a Single Species for One Time Step
-#'
-#' Internal function used by `sim_com()` to simulate the population dynamics
-#' of one species, given its interactions and the previous time step's state.
 #'
 #' @param i Integer. Species index.
 #' @param obj A `sim_com_data` object from `initialise_com()`.
 #' @param dK Array. Temporary array for computing species interactions \[rows, cols, species\].
 #' @param N 4D array. Population abundances \[rows, cols, time, species\].
-#' @param K 4D array. Carrying capacities \[rows, cols, time, species\].
+#' @param K_current_base Matrix. Carrying capacity 2D baseline for the specific time and species.
 #' @param t Integer. Current time step.
 #' @param a Matrix. Interaction matrix.
 #' @param dlist List. Dispersal distance list.
@@ -173,11 +208,13 @@ sim_species <- function(i, obj, dK, N, K, t, a, dlist, id, e) {
     dK[, , j] <- a[i, j] * N[, , t - 1, j]
   }
 
-  sum_dK <- apply(dK, 1:2, sum, na.rm = TRUE)
-  K[, , t, i] <- pmax(K[, , 1, i] + sum_dK, 0)
+  sum_dK <- rowSums(dK, dims = 2, na.rm = TRUE)
+
+  # Calculate effective carrying capacity for time 't'
+  K_effective <- pmax(K + sum_dK, 0)
 
   n1_m <- terra::setValues(terra::rast(id), N[, , t - 1, i])
-  K_m <- terra::setValues(terra::rast(id), K[, , t, i])
+  K_m <- terra::setValues(terra::rast(id), K_effective)
 
   obj$spec_data[[i]] <- update(
     obj$spec_data[[i]],
@@ -209,9 +246,7 @@ get_extinction_status <- function(N, t, nspec) {
     vapply(
       seq(nspec),
       function(i)
-        ifelse(sum(N[, , t, i], na.rm = TRUE) == 0,
-               TRUE,
-               FALSE),
+        sum(N[, , t, i], na.rm = TRUE) == 0,
       FUN.VALUE = logical(1))
 
   return(extinction_status)

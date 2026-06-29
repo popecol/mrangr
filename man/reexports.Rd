@@ -11,6 +11,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{rangr}{\code{\link[rangr]{to_rast}}}
+  \item{rangr}{\code{\link[rangr:to_rast]{to_rast()}}}
 }}
 

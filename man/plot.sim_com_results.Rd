@@ -33,8 +33,8 @@ the N_map slot of \code{sim_com_results} object}
 \item{...}{Further arguments passed to \code{\link[terra:plot]{terra::plot}}}
 }
 \value{
-#' * If \code{length(time_points) == 1}, returns a \code{SpatRaster} with species as layers.
 \itemize{
+\item If \code{length(time_points) == 1}, returns a \code{SpatRaster} with species as layers.
 \item If only one species is selected with multiple time points, returns a single \code{SpatRaster}.
 }
 }

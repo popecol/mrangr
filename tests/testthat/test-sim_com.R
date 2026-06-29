@@ -106,3 +106,68 @@ test_that("sim_com() validates invasion object", {
   )
 })
 
+test_that("sim_com successfully processes valid dynamic K_map list", {
+
+  sim_com_data <- readRDS(test_path("fixtures", "sim_com_data.rds"))
+
+  static_K <- terra::unwrap(sim_com_data$K_map)
+  nspec <- terra::nlyr(static_K)
+  n_layers <- 5
+
+  # Replicate the K map n_layers times as time steps for each species
+  dynamic_K_list <- lapply(seq_len(nspec), function(i) {
+    lyr <- static_K[[i]]
+    # Combine layers into a single multi-layer SpatRaster
+    dynamic_raster <- do.call(c, replicate(n_layers, lyr, simplify = FALSE))
+    terra::wrap(dynamic_raster)
+  })
+
+  sim_com_data$K_map <- dynamic_K_list
+  res <- sim_com(obj = sim_com_data, time = 3, burn = 0)
+
+  expect_s3_class(res, "sim_com_results")
+  expect_equal(res$sim_time, 3)
+  expect_equal(dim(res$N_map)[3], 3)
+})
+
+test_that("sim_com throws an explicit error when simulation time exceeds available layers", {
+  sim_com_data <- readRDS(test_path("fixtures", "sim_com_data.rds"))
+  static_K <- terra::unwrap(sim_com_data$K_map)
+  nspec <- terra::nlyr(static_K)
+
+  # Create only 3 time layers
+  dynamic_K_list <- lapply(seq_len(nspec), function(i) {
+    dynamic_raster <- do.call(c, replicate(3, static_K[[i]], simplify = FALSE))
+    terra::wrap(dynamic_raster)
+  })
+  sim_com_data$K_map <- dynamic_K_list
+
+  # Request a 6-step simulation, which should trigger stop()
+  expect_error(
+    sim_com(obj = sim_com_data, time = 6, burn = 0),
+    regexp = "Simulation time \\(6\\) exceeds the number of available time layers in K_map"
+  )
+})
+
+test_that("sim_com detects and reports layer count mismatches between species", {
+  sim_com_data <- readRDS(test_path("fixtures", "sim_com_data.rds"))
+  static_K <- terra::unwrap(sim_com_data$K_map)
+  nspec <- terra::nlyr(static_K)
+
+  # Create 5 time layers
+  dynamic_K_list <- lapply(seq_len(nspec), function(i) {
+    dynamic_raster <- do.call(c, replicate(5, static_K[[i]], simplify = FALSE))
+    terra::wrap(dynamic_raster)
+  })
+
+  # Change the second species – give it only 2 layers instead of 5
+  short_raster <- do.call(c, replicate(2, static_K[[2]], simplify = FALSE))
+  dynamic_K_list[[2]] <- terra::wrap(short_raster)
+
+  sim_com_data$K_map <- dynamic_K_list
+
+  expect_error(
+    sim_com(obj = sim_com_data, time = 4, burn = 0),
+    regexp = "Available layers per species: \\[5, 2, 5, 5\\]"
+  )
+})

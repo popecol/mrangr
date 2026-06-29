@@ -15,7 +15,7 @@ K_sim(n, id, range, cor_mat = NULL, qfun = qnorm, ...)
 
 \item{cor_mat}{Optional correlation matrix. If \code{NULL}, maps are generated independently.}
 
-\item{qfun}{Quantile function to apply to the generated GRFs (default: \code{\link[stats:Normal]{qnorm}}).}
+\item{qfun}{Quantile function to apply to the generated GRFs (default: \code{\link[stats:qnorm]{qnorm}}).}
 
 \item{...}{Additional arguments passed to the quantile function \code{qfun}.}
 }

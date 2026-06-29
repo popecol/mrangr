@@ -2,17 +2,17 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "mrangr",
-  "description": "Flexible, mechanistic, and spatially explicit simulator of metacommunities. It extends the 'rangr' package, which implemented a mechanistic virtual species simulator integrating population dynamics and dispersal. The 'mrangr' package adds the ability to simulate multiple species interacting through an asymmetric matrix of pairwise relationships, allowing users to model all types of biotic interactions — competitive, facilitative, or neutral — within spatially explicit virtual environments.",
+  "description": "A forward simulator for generating synthetic metacommunity data. As an in silico experimental platform, it enables researchers to simulate community shifts, test theoretical frameworks, and benchmark analytical algorithms prior to empirical application. Key capabilities include mechanistic simulations driven by demography, dispersal, and interactions, GIS interoperability via the 'terra' package for dynamic environments, and a virtual ecologist module that simulates imperfect detection and survey errors to mimic real-world biodiversity data.",
   "name": "mrangr: Mechanistic Metacommunity Simulator",
   "issueTracker": "XXXX",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.5.2 (2025-10-31 ucrt)",
+  "runtimePlatform": "R version 4.6.0 (2026-04-24 ucrt)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -234,7 +234,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "10727.517KB",
+  "fileSize": "10884.463KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -252,7 +252,7 @@
         }
       ],
       "name": "mrangr: Mechanistic Metacommunity Simulator",
-      "description": "R package version 1.0.1"
+      "description": "R package version 1.0.2"
     }
   ]
 }

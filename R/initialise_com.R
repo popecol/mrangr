@@ -7,7 +7,7 @@
 #'
 #' @param n1_map A [`SpatRaster`][terra::SpatRaster-class] with one layer per species representing the initial abundance.  If `NULL` (default), random initial values will be generated
 #'   from a Poisson distribution using `K_map`.
-#' @param K_map A [`SpatRaster`][terra::SpatRaster-class] with one layer per species representing carrying capacities.
+#' @param K_map A [`SpatRaster`][terra::SpatRaster-class] with one layer per species representing carrying capacities or a list of [`SpatRaster`][terra::SpatRaster-class] objects where each element corresponds to a species and contains multiple layers representing changing carrying capacities over time steps.
 #' @param r A numeric vector of intrinsic growth rates. It can be a single-element vector (if all species have the same intrinsic growth rate) or a vector of length equal to the number of species in the community.
 #' @param a A square numeric matrix representing interaction coefficients between species. Each element `a_ij` is the per-capita interaction strength of species `j` on species `i`. It expresses the change in carrying capacity of species `i` by a single individual of species `j`. The diagonal must be `NA` and the matrix must be a square matrix of order equal to the number of species. It does not have to be symmetric.
 #' @param dlist Optional. A list; target cells at a specified distance calculated
@@ -33,7 +33,7 @@
 #'   \item{a}{The interaction matrix.}
 #'   \item{r}{Intrinsic growth rate(s).}
 #'   \item{n1_map}{Initial abundance maps (wrapped `SpatRaster`).}
-#'   \item{K_map}{Carrying capacity maps (wrapped `SpatRaster`).}
+#'   \item{K_map}{Carrying capacity maps (wrapped `SpatRaster` or a list of wrapped `SpatRaster`s).}
 #'   \item{max_dist}{The maximum dispersal distance across all species.}
 #'   \item{dlist}{A list; target cells at a specified distance calculated
 #' for every cell within the study area.}
@@ -102,19 +102,30 @@ initialise_com <-
            use_names_K_map = TRUE, ...) {
 
     # Validate input types and dimensions ----------------------------------
+    is_K_map_list <- is.list(K_map)
 
-    assert_that(inherits(K_map, "SpatRaster"))
-    assert_that(nlyr(K_map) > 1,
-                msg = "Input maps must have at least two layers to simulate a community.")
-    if (is.null(n1_map)) {
-      n1_map <- init(K_map, function(n) suppressWarnings(rpois(n, as.vector(K_map))))
+    if (is_K_map_list) {
+      assert_that(all(vapply(K_map, inherits, logical(1), "SpatRaster")),
+                  msg = "If K_map is a list, all elements must be SpatRaster objects.")
+      # Create a baseline raster using the first time step for each species
+      K_map_initial <- terra::rast(lapply(K_map, function(r) r[[1]]))
+    } else {
+      assert_that(inherits(K_map, "SpatRaster"),
+                  msg = "K_map must be a SpatRaster or a list of SpatRaster objects.")
+      K_map_initial <- K_map
     }
+
+    assert_that(terra::nlyr(K_map_initial) > 1,
+                msg = "Input maps must have at least two layers/species to simulate a community.")
+
+    if (is.null(n1_map)) {
+      n1_map <- terra::init(K_map_initial, function(n) suppressWarnings(rpois(n, as.vector(K_map_initial))))
+    }
+
     assert_that(inherits(n1_map, "SpatRaster"))
-    K_n1_map_check(K_map, n1_map)
+    K_n1_map_check(K_map_initial, n1_map)
 
-
-
-    nspec <- terra::nlyr(K_map)
+    nspec <- terra::nlyr(K_map_initial)
     assert_that(is.numeric(r), length(r) %in% c(1, nspec),
                 msg = "'r' must be either a scalar or a numeric vector of length equal to the number of species.")
     assert_that(is.matrix(a), is.numeric(a))
@@ -141,10 +152,9 @@ initialise_com <-
     }
 
     # get species names
-    spec_names <- if (use_names_K_map) names(K_map) else seq(nspec)
-    names(n1_map) <- spec_names
-    names(K_map) <- spec_names
-
+    spec_names <- if (use_names_K_map) names(K_map_initial) else seq(nspec)
+    names(n1_map) <- as.character(spec_names)
+    names(K_map) <- as.character(spec_names)
 
     # Process additional parameters ----------------------------------------
 
@@ -191,7 +201,8 @@ initialise_com <-
     max_dist <- max(vapply(spec_data, function(x) x$max_dist, numeric(1)), na.rm = TRUE)
 
     if(is.null(dlist))
-      dlist <- update(spec_data[[1]], calculate_dist = TRUE, max_dist = max_dist)$dlist
+      dlist <- update(spec_data[[1]], n1_map = n1_map[[1]], calculate_dist = TRUE, max_dist = max_dist)$dlist
+    # n1_map - temporary fix before rangr is updated on CRAN
 
 
     # Handle invaders ------------------------------------------------------
@@ -200,7 +211,7 @@ initialise_com <-
       invaders <- invasion$invaders
 
       # Set the initial abundance of the invading species to 0.
-      n1_map[[invaders]] <- app(n1_map[[invaders]], set_zero)
+      n1_map[[invaders]] <- terra::app(n1_map[[invaders]], set_zero)
     }
 
     # Assemble output ------------------------------------------------------
@@ -215,7 +226,8 @@ initialise_com <-
       r = r,
       a = a,
       n1_map = terra::wrap(n1_map),
-      K_map = terra::wrap(K_map),
+      # Wrap K_map depending on whether it's a list or a SpatRaster
+      K_map = if (is_K_map_list) lapply(K_map, terra::wrap) else terra::wrap(K_map),
       max_dist = max_dist,
       dlist = dlist,
       invasion = invasion,

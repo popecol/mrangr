@@ -54,3 +54,4 @@ dev_scripts/kernels.R
 tests/testthat/Rplots.pdf
 inst/doc
 .positai
+dev_scripts/changing_env.R

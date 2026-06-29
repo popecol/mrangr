@@ -26,7 +26,8 @@ An object of class \code{sim_com_results}, a list containing:
 }
 \description{
 This function simulates species interactions and population dynamics over a given period.
-It accounts for species invasions and updates population abundances at each time step.
+It accounts for species invasions and updates population abundances at each time step,
+while natively supporting both static and time-dynamic (changing) carrying capacities.
 }
 \examples{
 \donttest{
